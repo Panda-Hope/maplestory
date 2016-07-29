@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>冒险岛商城</title>
+<style type="text/css">
+*                        {margin:0;padding:0;}
+body                     {background:#DBF7F5;}
+div                      {margin:0px auto;background:__IMAGE__/20130128154830_37994.jpg);width:1200px;height:800px;}
+a                        {color:#09C;font-size:30px;}
+p                        {font-size:30px;color:#666;}
+</style>
+</head>
+
+<body>
+<div>
+<switch name='think'>
+<case value='0'>
+<p><h3>您的账户已经激活。无需再次激活</h3></p>
+</case>
+<case value='1'>
+<p><h3>不存在需要激活的用户</h3></p>
+</case>
+<case value='2'>
+<p>恭喜您激活成功 <span id="time"></span>秒自动跳转到<a href="__URL__/index">首页</a></p>
+</case>
+<default />
+<p><h3>不存在需要激活的用户</h3></p>
+</switch>
+</div>
+<script type="text/javascript">
+var num=5;
+function jump()
+{
+	var time=document.getElementById('time');
+	time.innerHTML=num;
+	num--;
+	if (num<0)
+	{
+		clearInterval(fun);
+		location.href="http://test02.com";
+	}
+}
+var fun=setInterval(jump,1000);
+</script>
+</body>
+</html>
+

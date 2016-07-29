@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>欢迎来到冒险岛</title>
+<link rel="stylesheet" href="__CSS__/Head.css" />
+<link rel="stylesheet" href="__CSS__/login.css" />
+<script type="text/javascript" src="__JS__/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+<canvas id="canvas">您的浏览器版本过低</canvas>
+<canvas id="canvas_2">您的浏览器版本过低</canvas>
+<!--背景图-->
+<div id="bgcolor"></div>
+
+<!--头部标题-->
+<div id="head_tag">
+<div><a href="__MODULE__/liu/liushuo" id="head_pic"></a></div>
+<a href="__MODULE__/Index/index" id="mxd_logo"><img src="__IMAGE__/hope.PNG" /></a>
+</div>
+
+<!--右侧固定标志-->
+<div class="fix_logo"></div>
+<div id="login_logo">
+<present name='Think.cookie.user'>
+<a href="__MODULE__/Myhome/index" class="right_pic"><img id="user_photo" title="个人中心" src="__IMAGE__/<{$Think.session.photo}>" /></a>
+<span></span>
+<a href="__MODULE__/login/quit" class="right_pic" title="退出" >退出</a>
+<else />
+<a href="#1" class="right_pic" id="login_button">登陆</a>
+<a href="__URL__/register" class="right_pic" target="_blank">注册</a>
+</present>
+</div>
+
+<!--登陆界面-->
+<div id='black_cover'></div>
+<div id="login_window">
+<div>
+<a href="javascript:" id="close_pic"><img src="__IMAGE__/close.png" /></a>
+<table height="300" id="table1">
+<form id='login_form' action="__MODULE__/Login/index" method="post">
+<tr><td align="center" colspan="2"><h1 id="dl">Maple Story</h1></td></tr>
+<tr><td class="prefix">用户名:</td><td><input class='text' type="text" name="user"/></td></tr>
+<tr><td class="prefix">密码:</td><td><input class='text' type="password" name="password" /></td></tr>
+<tr><td colspan="2"><a href="javascript:" id="submit">登陆</a></td></tr>
+</form>
+</table>
+</div>
+</div>
+
+<!--广告轮播效果-->
+<div id="ad_animate">
+<a href="__URL__/register" class="login_pic" target="_blank"><img src="__IMAGE__/fresh2014.png" /></a>
+<foreach name='ad_path' item='vo'>
+<a href="" class="ad_ad_animate_bg"><img class="ad_pic" src="__IMAGE__/<{$vo.pathname}>" width="1200" height="430" /></a>
+</foreach>
+<span id="change_left"><img src="__IMAGE__/gallery_button_left.png" /></span>           
+<span id="change_right"><img src="__IMAGE__/gallery_button_right.png" /></span>
+
+<ul>
+<foreach name='ad_path' item='vo'>
+<li class="ad_li"></li>
+</foreach>
+</ul>
+</div>
+
+<!--酷炫装备-->
+<div class="commodity">
+<p id="com_title">酷炫装备</p>
+<foreach name='kxzb_path' item='vo'>
+<div class="com_pic">
+<div class="color_show"></div>
+<a href="__MODULE__/Pay/index" target="_blank"><img class='com_gif' src="__IMAGE__/<{$vo.path}>" /></a>
+<span class="com_span1">
+<a href="__MODULE__/Pay/index" target="_blank"><{$vo.name}></a>
+</span>
+<span class="com_span2">
+<img src="__IMAGE__/dot.gif" />
+<span><{$vo.price}>点</span>
+</span>
+<span class="com_span3">
+<img src="__IMAGE__/cart.png" />
+<a href="__MODULE__/Pay/index" target="_blank">购买</a>
+</span>
+</div>
+</foreach>
+</div>
+
+<!--商品展示-->
+<div class='commodity_show'>
+<div class="bg_pic">
+<foreach name='xpzs_path' item='vo'>
+<div>
+<a class='commodity_show_pic' href=""><img src="__IMAGE__/<{$vo.path}>" /></a>
+<a href=""><img src="__IMAGE__/a2_chrm_1.png" /><{$vo.name}></a>
+</div>
+</foreach>
+</div>
+</div>
+
+<!--实用消耗-->
+<div class="commodity">
+<p id="com_title">实用消耗</p>
+<foreach name='syxh_path' item='vo'>
+<div class="com_pic">
+<div class="color_show"></div>
+<a href="__MODULE__/Pay/syxh" target="_blank"><img class='com_gif' src="__IMAGE__/<{$vo.path}>" /></a>
+<span class="com_span1">
+<a href="__MODULE__/Pay/syxh" target="_blank"><{$vo.name}></a>
+</span>
+<span class="com_span2">
+<img src="__IMAGE__/dot.gif" />
+<span><{$vo.price}>点</span>
+</span>
+<span class="com_span3">
+<img src="__IMAGE__/cart.png" />
+<a href="__MODULE__/Pay/syxh" target="_blank">购买</a>
+</span>
+</div>
+</foreach>
+</div>
+
+<!--宠物中心-->
+<div class="commodity">
+<p id="com_title">宠物中心</p>
+<foreach name='cwzx_path' item='vo'>
+<div class="com_pic">
+<div class="color_show"></div>
+<a href="__MODULE__/Pay/cwzx" target="_blank"><img class='com_gif' src="__IMAGE__/<{$vo.path}>" /></a>
+<span class="com_span1">
+<a href="__MODULE__/Pay/cwzx" target="_blank"><{$vo.name}></a>
+</span>
+<span class="com_span2">
+<img src="__IMAGE__/dot.gif" />
+<span><{$vo.price}>点</span>
+</span>
+<span class="com_span3">
+<img src="__IMAGE__/cart.png" />
+<a href="__MODULE__/Pay/cwzx" target="_blank">购买</a>
+</span>
+</div>
+</foreach>
+</div>
+
+<!--底部背景图-->
+<div id="bottom_bgcolor">
+<div class="bottom_bg"></div>
+</div>
+
+<!--底部介绍-->
+<div class="bottom_bg_2">
+</div>
+
+<present name="Think.cookie.user">
+<else />
+<script type="text/javascript" src="__JS__/digit.js"></script>
+<script type="text/javascript" src="__JS__/HeadCanvas.js"></script>
+</present>
+<script type="text/javascript" src="__JS__/Head.js"></script>
+<script type="text/javascript">
+var module='__MODULE__';
+</script>
+<script type="text/javascript" src="__JS__/login.js"></script>
+</body>
+</html>

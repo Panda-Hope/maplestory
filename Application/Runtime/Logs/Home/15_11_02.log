@@ -1,0 +1,60 @@
+[ 2015-11-02T22:54:49+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001888s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `big_ad_pic` LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `kxzb` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `kxzb` LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xpzs` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xpzs` LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `syxh` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `syxh` LIMIT 0,15   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `cwzx` LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019939s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020058s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000907s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000960s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001035s ]
+
+[ 2015-11-02T22:54:50+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `big_ad_pic` LIMIT 0,15   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `kxzb` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `kxzb` LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xpzs` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `xpzs` LIMIT 0,15   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `syxh` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `syxh` LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `cwzx` LIMIT 0,15   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014433s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014528s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000781s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+

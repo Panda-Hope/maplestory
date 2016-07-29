@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+/*背景图*/
+body                                     {padding-top:10px;background-color:#F4FCFE;}
+#bgcolor                                 {background:url(../IMAGES/20150706163515_59004.jpg) no-repeat;background-size:100%;position:absolute;left:0px;top:0px;z-index:-999;}
+
+/*主体部分*/
+.body                                    {width:1200px;min-height:500px;background:transparent;background-color:rgba(255,255,255,0.75);margin-top:150px;border-radius:8px;}
+.title                                   {color:#666;font-size:30px;padding:10px 0px 0px 50px;}
+.title span                              {color:#4EB9D6;font-size:35px;} 
+.msg_list                                {width:1400px;height:40px;}
+.user_msg                                {display:block;text-decoration:none;font-size:30px;width:170px;height:50px;color:#666;border-bottom:2px dotted #999999;text-align:center;line-height:50px;float:left;}
+.user_msg:hover                          {color:#23F6EA;}
+#tuichu                                  {color:#666;margin-left:250px;text-decoration:none;}
+#tuichu:hover                            {color:#23F6EA;}
+/*iframe*/
+#iframe_msg                              {width:830px;height:520px;display:block;margin:30px auto;border-radius:8px;}
+

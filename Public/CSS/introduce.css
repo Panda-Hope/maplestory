@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+#black_cover_2                                         {position:absolute;left:0px;top:0px;background:transparent;background-color:rgba(255,255,255,0.75);z-index:800;display:none;}
+#login_window_2                                        {width:400px;height:500px;position:fixed;background:#FFF;z-index:850;border-radius:10px;background:#CDC9C9;display:none;}
+#close_pic_2                                           {position:absolute;right:0;top:0;width:30px;height:30px;z-index:890;}
+.pay_title                                             {text-align:center;color:#0FF;font-size:50px;height:60px;margin-top:20px;margin-bottom:20px;}
+#table2                                                {margin:20px auto;width:250px;border:1px solid #0FF;border-radius:10px;}
+#table2 td                                             {text-align:center;border-bottom:1px dotted #0FF;height:60px;color:#666;font-size:20px;}
+.car_href                                              {border:none;width:110px;height:40px;border-radius:8px;font-size:18px;text-decoration:none;text-align:center;line-height:40px;display:inline-block;color:#666;background:#C1E9FA;}
+.car_href:hover                                        {background:#FEE8F5;}
+#carname                                               {color:#551A8B}
+#carprice                                              {color:#F03;}

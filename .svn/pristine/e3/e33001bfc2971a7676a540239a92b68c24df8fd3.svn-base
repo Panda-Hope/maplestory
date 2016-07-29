@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>冒险岛商城个人中心</title>
+<link href="__CSS__/Myhome.css" rel="stylesheet" />
+<link rel="stylesheet" href="__CSS__/login.css" />
+<script type="text/javascript" src="__JS__/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+<!--背景图-->
+<div id="bgcolor"></div>
+
+<!--头部标题-->
+<div id="head_tag">
+<div><a href="" id="head_pic"></a></div>
+<a href="__MODULE__/Index/index" id="mxd_logo"><img src="__IMAGE__/logo.PNG" /></a>
+</div>
+
+<!--右侧固定标志-->
+<div class="fix_logo"></div>
+<div id="login_logo">
+<present name='Think.cookie.user'>
+<a href="__MODULE__/Myhome/index" class="right_pic"><img id="user_photo" title="个人中心" src="__IMAGE__/<{$Think.session.photo}>" /></a>
+<span></span>
+<a href="__MODULE__/login/quit" class="right_pic" title="退出" >退出</a>
+<else />
+<a href="#1" class="right_pic" id="login_button">登陆</a>
+<a href="__URL__/register" class="right_pic" target="_blank">注册</a>
+</present>
+</div>
+
+<!--个人信息-->
+<div class="msg_body">
+<div class="head_photo">
+<div class="myphoto" >
+<img id="current_photo" title="更换头像" src="__IMAGE__/<{$Think.session.photo}>" />
+<img class="change_photo" title="更换头像" src="__IMAGE__/maplestory.png" />
+<img class="change_photo" title="更换头像" src="__IMAGE__/20150901213615.png" />
+<img class="change_photo" title="更换头像" src="__IMAGE__/20150901213416.jpg" />
+<img class="change_photo" title="更换头像" src="__IMAGE__/num4_pic.png" />
+<img class="change_photo" title="更换头像" src="__IMAGE__/num3_pic.png" />
+</div>
+<span class="time_msg"><{$msg}>:<{$Think.session.user}></span>
+<canvas id="canvas"></canvas>
+</div>
+<div class="msg_list">
+<a href="javascript:" class="user_msg">个人资料</a>
+<a href="javascript:" class="user_msg">修改密码</a>
+<a href="javascript:" class="user_msg">收货地址</a>
+<a href="javascript:" class="user_msg">订单记录</a>
+<a href="javascript:" class="user_msg">消息中心</a>
+<a href="javascript:" class="user_msg">个性服务</a>
+</div>
+
+<iframe src="__URL__/usermsg" frameborder="1" id="iframe_msg">
+</iframe>
+</div>
+
+<script type="text/javascript" src="__JS__/digit.js"></script>
+<script type="text/javascript" src="__JS__/Myclock.js"></script>
+<script type="text/javascript">
+var module='__MODULE__';
+var url='__URL__';
+</script>
+<script type="text/javascript" src="__JS__/Myhome.js"></script>
+<script type="text/javascript" src="__JS__/login.js"></script>
+</body>
+</html>

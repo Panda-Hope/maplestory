@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+*                                        {margin:0;padding:0;}
+
+/*背景图*/
+body                                       {padding-top:10px;background-color:#F4FCFE;}
+#bgcolor                                 {background:url(../IMAGES/mxd_bg.jpg) -300px 0px no-repeat;background-size:1920px 650px;position:absolute;left:8%;top:0px;z-index:-999;}
+
+/*标题图片*/
+#head_tag                                {position:relative;margin-top:20px;}
+#mxd_logo                                {position:absolute;left:490px;top:-30px;}
+#head_pic                                {display:block;width:1200px;height:70px;background:url(../IMAGES/nav.png) 0px -90px;}
+
+/*右侧固定图标*/
+.fix_logo                                {width:40px;height:80px;border-radius:5px;position:fixed;z-index:200;right:0px;top:300px;background:url(../IMAGES/fix_logo.png) no-repeat;}
+.fix_logo_2                              {width:40px;height:80px;border-radius:5px;position:fixed;z-index:200;right:0px;top:300px;background:url(../IMAGES/fix_logo_2.png) no-repeat -20px -0px;} 
+#login_logo                              {width:180px;height:330px;background:url(../IMAGES/rect_bg_2.png) no-repeat;background-size:180px 330px;position:fixed;z-index:600;right:-200px;top:200px;border-radius:10px;}
+.right_pic                               {display:block;border:2px solid #FFF;width:102px;height:102px;margin:40px auto;border-radius:55px;font-size:30px;text-decoration:none;text-align:center;line-height:100px;color:#C0C;}
+.right_pic:hover                         {border:2px solid #0FF;}
+#user_photo                              {width:100px;height:100px;border-radius:55px;} 
+
+/*个人信息*/
+.msg_body                                {width:1200px;min-height:600px;;border:1px solid #FFF;border-radius:10px;background:transparent;background-color:rgba(255,255,255,0.75);overflow:hidden;margin-top:60px;position:relative;}
+.head_photo                              {width:1200px;height:120px;}
+.myphoto                                 {display:inline-block;border:2px solid  #FFF;width:102px;height:102px;border-radius:55px;color:#C0C;position:absolute;left:30px;top:30px;overflow:hidden;}
+.time_msg                                {display:inline-block;font-size:50px;color:#666;margin-top:60px;margin-left:200px;}
+.right_pic:hover                         {border:2px solid #0FF;}
+#current_photo                           {width:100px;height:100px;border-radius:55px;}
+.change_photo                            {width:100px;height:100px;border-radius:55px;margin-left:25px;}
+.msg_list                                {width:1200px;height:50px;}
+.user_msg                                {display:block;text-decoration:none;font-size:30px;width:200px;height:80px;color:#666;border-bottom:2px dotted #999999;text-align:center;line-height:80px;float:left;}
+.user_msg:hover                          {color:#23F6EA;}
+
+/*时钟*/
+#canvas                                  {float:right;margin-right:120px;margin-top:40px;}
+
+/*iframe*/
+#iframe_msg                              {width:500px;height:450px;margin:60px auto;display:block;border-radius:10px;}
+

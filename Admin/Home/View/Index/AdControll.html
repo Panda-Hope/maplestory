@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+.pic_framework                      {float:left;margin:10px 40px;}
+.pic_p a                            {text-decoration:none;color:#666;display:block;width:80px;height:30px;background:#CCC;border-radius:10px;margin:0 auto;text-align:center;line-height:30px;}
+.pic_p a:hover                      {background-color:#89E0F7;}
+.page_msg                           {color:#666;text-decoration:none;font-size:20px;}
+.page_msg:hover                     {color:#0FF;}
+#search_frame                       {width:40px;border-radius:10px;color:#0FF;}
+.page_p                             {width:790px;text-align:center;color:#666;font-size:20px;float:left;overflow:hidden;}         
+</style>
+</head>
+
+<body>
+<foreach name='result' item="vo">
+<div class="pic_framework">
+<img src="__IMAGE__/<{$vo.pathname}>" width="300" height="300" />
+<p class="pic_p">ID：<{$vo.id}>&nbsp;添加时间：<{$vo.addtime}></p>
+<p class="pic_p"><a href="__URL__/DeleteAd?id=<{$vo.id}>&gg=<{$vo.pathname}>">删除广告</a></p>
+</div>
+</foreach>
+<p class="page_p"><{$msg}>&nbsp;&nbsp;<a href="__URL__/AddAd" class="page_msg">添加广告</a></p>
+</body>
+</html>

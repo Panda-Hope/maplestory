@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+body               {background:#A3D8FE}
+*                       {margin:0px;padding:0px;;}
+.bg_image          {position:absolute;z-index:-999;margin-top:20px;border-radius:10px;margin-left: 30%;}
+.Login             {width:500px;height:500px;margin:70px 500px 20px;}
+.text              {height:30px;width:200px;margin-left:20px;border-radius:7px;color:#0FF;font-size:18px;}
+.verify            {height:30px;width:100px;margin-left:20px;border-radius:7px;color:#0FF;font-size:18px;}
+.prefix            {line-height:30px;text-align:right;font-size:18px;color:#FFF}
+#submit            {margin-left:150px;border:none;background:#AFCD01;color:#FFF;width:80px;height:40px;border-radius:10px;}
+#submit:hover      {background:#E45D97;}
+span               {color:#0CC;font-size:20px;}
+#dl                {margin-left:50px;color:#FFF;}
+table              {margin-left: 35%;}

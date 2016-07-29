@@ -1,0 +1,18 @@
+[ 2015-09-07T15:48:08+08:00 ] 127.0.0.1 /admin.php/Model/pie3d_csimex1.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001871s ]
+ERR: 无法加载模块:Model
+
+[ 2015-09-07T17:06:35+08:00 ] 127.0.0.1 /admin.php/Model/pie3d_csimex1.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001809s ]
+ERR: 无法加载模块:Model
+
+[ 2015-09-07T23:51:03+08:00 ] 127.0.0.1 /admin.php/Model/pie3d_csimex1.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002033s ]
+ERR: 无法加载模块:Model
+

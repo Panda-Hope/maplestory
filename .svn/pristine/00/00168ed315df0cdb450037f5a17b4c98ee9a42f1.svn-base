@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>微信二维码测试</title>
+    </head> 
+    <body> 
+        <script>
+            location.href='http://weixin.qq.com/r/8HQ7NLHEY48ch6BXnyHU'
+        </script>
+    </body>
+</html>
