@@ -123,6 +123,14 @@
 
 	(0, _routers2.default)(router);
 
+	router.beforeEach(function (transition) {
+	    if (transition.to.requireAuth) {
+	        localStorage.userId ? transition.next() : transition.redirect({ path: '/' });
+	    }
+
+	    transition.next();
+	});
+
 	router.start({}, '#app');
 
 /***/ },
@@ -14307,12 +14315,13 @@
 	        '/': {
 	            component: function component(resolve) {
 	                __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(6)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
-	            }
+	            },
+	            requireAuth: false
 	        },
 	        // 404 路由
 	        '*': {
 	            component: function component(resolve) {
-	                __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(8)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
+	                __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(15)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
 	            }
 	        }
 	    });

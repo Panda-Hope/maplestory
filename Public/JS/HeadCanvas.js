@@ -2,15 +2,20 @@
 var num=9;                                                      //全局变量 
 var AllBall=[]; 
 var cxt;
+
 var color=['#EBFDB2','#FFC094','#F87EF9','#FFFFFF','#FB9397','#FEFF99','#56AE70','#8D6DFA','#FEFF99','#F97E91']; //设置颜色
+
 var canvas=document.getElementById('canvas');
+
 canvas.width=$(window).width();
 canvas.height=$(window).height();
 canvas.style.background='aqua';
-cxt=canvas.getContext('2d');                                     
+cxt=canvas.getContext('2d');  
+
 var radius;
 var offtop;
 var offleft;
+
 window.onload=function()                                    //配置所画圆的信息  可在此修改所画数字的信息 
 {
 	radius=$(window).width()/100;                                              
@@ -21,7 +26,7 @@ window.onload=function()                                    //配置所画圆的
 	{
 		sport();
 		RenderSport();
-	},50)
+	},50);
 }
 
                                                              //欢迎标语绘制

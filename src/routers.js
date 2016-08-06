@@ -3,7 +3,8 @@ export default function(router) {
                 '/': {
                     component: function(resolve) {
                         require(['./components/Home/index.vue'], resolve);
-                    }
+                    },
+                    requireAuth: false
                 },
                 // 404 路由 
                 '*': {

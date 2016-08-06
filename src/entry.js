@@ -14,5 +14,13 @@ let router = new VueRouter();
 
 routerMap(router);
 
+router.beforeEach(function(transition) {
+    if (transition.to.requireAuth) {
+        localStorage.userId ? transition.next() : transition.redirect({path: '/'});
+    }
+    
+    transition.next();
+});
+
 router.start({}, '#app');
 

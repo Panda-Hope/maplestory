@@ -1,10 +1,10 @@
 webpackJsonp([2],{
 
-/***/ 8:
+/***/ 15:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(9)
+	__vue_template__ = __webpack_require__(16)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -24,7 +24,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 9:
+/***/ 16:
 /***/ function(module, exports) {
 
 	module.exports = "\n<h1>404 页面丢失</h1>\n";
