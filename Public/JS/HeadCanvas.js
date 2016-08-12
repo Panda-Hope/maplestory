@@ -35,7 +35,7 @@ function RenderFont()
 	var canvas=document.getElementById('canvas_2');
 	var cxt=canvas.getContext('2d');
 	canvas.width=$(window).width();
-    canvas.height=$(window).height();
+                   canvas.height=$(window).height();
 	var grd=cxt.createLinearGradient(0,0,1200,200);
 	grd.addColorStop(0,'#36F1D4');
 	grd.addColorStop(0.3,'#F5D659');

@@ -68,7 +68,7 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, "\n#canvas {\n    background-color: aqua;\n}\n", ""]);
+	exports.push([module.id, "\n#canvas {\n    position:fixed;\n    left:0;\n    top:0;\n    z-index:999;\n    background-color: aqua;\n}\n#canvas_2 {\n    position:fixed;\n    left:0;\n    top:0;\n    z-index:800;\n    opacity:0;\n    background:#FFF;\n}\n.bg_image {\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 500px;\n    z-index: -999;\n    background:url(" + __webpack_require__(20) + ") no-repeat center top;\n}\n.logo-special {\n    height:70px;\n    background:url(" + __webpack_require__(21) + ") no-repeat 0px -90px;\n}\n.mxd_logo {\n    position:absolute;\n    left: 490px;\n    top: -50px;\n}\n.login_pic {\n    position: absolute;\n    left: 0;\n    bottom: -300px;\n}\n", ""]);
 
 	// exports
 
@@ -353,159 +353,44 @@ webpackJsonp([1],[
 
 /***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	        value: true
-	});
-
-	__webpack_require__(12);
-
-	exports.default = {};
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _digit = __webpack_require__(13);
-
-	var _digit2 = _interopRequireDefault(_digit);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var CanvasBalls = function CanvasBalls(canvasApi) {
-	    this.canvasApi = canvasApi;
-	    this.nums = 9;
-	    this.allBalls = []; //balls container
-	    this.colors = ['#EBFDB2', '#FFC094', '#F87EF9', '#FFFFFF', '#FB9397', '#FEFF99', '#56AE70', '#8D6DFA', '#FEFF99', '#F97E91']; //set the colors of the balls
-	    this.offsetTop = ''; //initial top offset of the window
-	    this.offsetLeft = ''; //initial left offset of the window
-	    this.ctx; //Canvas.getContext('2d')
-	    this.vx = 5; //the horizontal speed of the balls
-	    this.vy = -10; //the vertical speed of the balls
-	    this.gravity = 1; //the acceleration of gravity of the balls
-	    this.radius; //initial radius
-	    this.width;
-	    this.height;
-	};
-
-	CanvasBalls.prototype.start = function () {
-	    if (!this.canvasApi) {
-	        throw new Error('CanvasBall Animation Need A Canvas Template Target !!!');
-	    }
-
-	    var canvas = document.querySelector(this.canvasApi);
-
-	    this.width = window.innerWidth;
-	    this.height = window.innerHeight;
-	    this.radius = this.width / 100;
-
-	    canvas.width = this.width;
-	    canvas.height = this.height;
-
-	    this.ctx = canvas.getContext('2d');
-
-	    setTimeout.call(this, this.renderDigit, 1000);
-	    //    setInterval(this.sport, 50);
-	};
-
-	CanvasBalls.prototype.renderDigit = function () {
-	    console.log(this);
-	    //    for (var i=0;i<digit[this.nums].length;i++) {
-	    //        for (var j=0;j<digit[this.nums][i].length;j++) {
-	    //            if (digit[this.nums][i][j]==1) {
-	    //                let balls = {
-	    //                x:offleft+j*2*(radius+1)+(radius+1),
-	    //                y:offtop+i*2*(radius+1)+(radius+1),
-	    //                vx: this.vx,
-	    //                vy: this.vy,
-	    //                g: this.gravity,
-	    //                r: this.radius,
-	    //                color: this.colors[Math.floor(Math.random()*colors.length)]}
-	    //            };
-	    //           
-	    //             this.allBalls.push(balls);
-	    //        }
-	    //    }
-	    //   
-	    this.nums--;
-	};
-
-	CanvasBalls.prototype.sport = function () {
-	    var allBalls = this.allBalls;
-
-	    for (var k = 0; k < allBalls.length; k++) {
-	        allBalls[k].x += allBalls[k].this.vx;
-	        allBalls[k].y += allBalls[k].this.vy;
-	        allBalls[k].vy += allBalls[k].this.gravity;
-
-	        if (allBalls[k].y >= cxt.canvas.height - allBalls[k].r) {
-	            allBalls[k].y = cxt.canvas.height - allBalls[k].r;
-
-	            allBalls[k].vy = -allBalls[k].vy * Math.random(); //小球摩擦系数
-	        }
-
-	        this.renderSport(allBalls);
-	    }
-	};
-
-	CanvasBalls.prototype.renderSport = function (allBalls) {
-	    ctx = this.ctx;
-
-	    cxt.clearRect(0, 0, this.width, this.height);
-
-	    for (var k = 0; k < allBalls.length; k++) {
-	        cxt.beginPath();
-	        cxt.fillStyle = allBalls[k].color;
-	        cxt.arc(allBalls[k].x, allBalls[k].y, allBalls[k].r, 0, 2 * Math.PI);
-	        cxt.fill();
-	        cxt.closePath();
-	    }
-	};
-
-	/* ===============
-	 * start up the animation
-	 * ===============*/
-
-	window.onload = function () {
-	    var ele = '#canvas';
-
-	    var animationBall = new CanvasBalls(ele);
-
-	    animationBall.start();
-	};
-
-/***/ },
-/* 13 */
 /***/ function(module, exports) {
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = [[[0, 0, 1, 1, 1, 0, 0], [0, 1, 1, 0, 1, 1, 0], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 1, 1, 0, 1, 1, 0], [0, 0, 1, 1, 1, 0, 0]], //0
-	[[0, 0, 0, 1, 1, 0, 0], [0, 1, 1, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [1, 1, 1, 1, 1, 1, 1]], //1
-	[[0, 1, 1, 1, 1, 1, 0], [1, 1, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 1, 1, 0, 0, 0], [0, 1, 1, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 1, 1], [1, 1, 1, 1, 1, 1, 1]], //2
-	[[1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 1, 1, 1, 1, 1, 0]], //3
-	[[0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 1, 0], [0, 0, 1, 1, 1, 1, 0], [0, 1, 1, 0, 1, 1, 0], [1, 1, 0, 0, 1, 1, 0], [1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 1, 1]], //4
-	[[1, 1, 1, 1, 1, 1, 1], [1, 1, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 1, 1, 1, 1, 1, 0]], //5
-	[[0, 0, 0, 0, 1, 1, 0], [0, 0, 1, 1, 0, 0, 0], [0, 1, 1, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0], [1, 1, 0, 1, 1, 1, 0], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 1, 1, 1, 1, 1, 0]], //6
-	[[1, 1, 1, 1, 1, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 1, 1, 0, 0], [0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0], [0, 0, 1, 1, 0, 0, 0]], //7
-	[[0, 1, 1, 1, 1, 1, 0], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 1, 1, 1, 1, 1, 0], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 1, 1, 1, 1, 1, 0]], //8
-	[[0, 1, 1, 1, 1, 1, 0], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 1], [0, 1, 1, 1, 0, 1, 1], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0, 0], [0, 1, 1, 0, 0, 0, 0]], //9
-	[[0, 0, 0, 0], [0, 0, 0, 0], [0, 1, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 1, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0]] //:
-	];
+/***/ },
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<!--    <canvas id=\"canvas\">您的浏览器版本过低</canvas>-->\n    <canvas id=\"canvas_2\">您的浏览器版本过低</canvas>\n    \n    <header>\n        <div class=\"bg_image\"></div>\n        <div class=\"container top-adjust\">\n            <div class=\"logo-special\"></div>\n            <img src=\"" + __webpack_require__(18) + "\" class=\"mxd_logo\"></a>\n            <a class=\"login_pic\" target=\"_blank\"><img src=\"" + __webpack_require__(19) + "\"></a>\n        </div>\n    </header>\n    \n    <section>\n        \n    </section>\n";
 
 /***/ },
-/* 14 */
-/***/ function(module, exports) {
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\n\n\n\n\n\n<canvas id=\"canvas\">您的浏览器版本过低</canvas>\n";
+	module.exports = __webpack_require__.p + "hope.png?37ed2bba28e5f0bd88868496853c2f92";
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fresh2014.png?a958e78a75eb28351e70b20f149cc1b5";
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "home_bg0819.jpg?e556533281e59a50d92a381a9cf5eb41";
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "nav.png?03d28319754398197dccd3e8cbbcd56f";
 
 /***/ }
 ]);
