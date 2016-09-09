@@ -1,10 +1,10 @@
 webpackJsonp([2],{
 
-/***/ 15:
+/***/ 28:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(16)
+	__vue_template__ = __webpack_require__(29)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -14,7 +14,7 @@ webpackJsonp([2],{
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./404.vue"
+	  var id = "./search.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -24,10 +24,10 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 16:
+/***/ 29:
 /***/ function(module, exports) {
 
-	module.exports = "\n<h1>404 页面丢失</h1>\n";
+	module.exports = "\nOK\n";
 
 /***/ }
 

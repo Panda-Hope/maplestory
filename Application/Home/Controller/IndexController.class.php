@@ -52,6 +52,37 @@ class IndexController extends Controller {
 		$this->display();
 	}
 	
+	/*
+	 * @ VUE JSON 文件
+	 */
+	public function indexVue() {
+		$m=M('big_ad_pic');
+
+		$data['banner'] = $m->limit(0, 15)->select();
+		$data['kxzb'] = $m->table('kxzb')->limit(0,15)->order('id desc')->select();
+		$data['xpzs'] = $m->table('xpzs')->limit(0,15)->order('id desc')->select();
+		$data['syxh'] = $path=$m->table('syxh')->limit(0,15)->order('id desc')->select();
+		$data['cwzx'] = $path=$m->table('cwzx')->limit(0,15)->order('id desc')->select();
+		$data['url'] = $_GET['searchKey'];
+
+		echo json_encode($data);
+	}
+
+	public function getProductsMsgVue() {
+		$type = I('get.type');
+		$id = I('get.id');
+		$data = [];
+		$m = M('big_ad_pic');
+
+		if (!is_string($type) || $id !== 0 && !$id) {
+			$data['msg'] = '无存在ID';
+		}
+
+		$data = $m->table($type)->where("id=$id")->find();
+
+		echo json_encode($data);
+	}
+
 	public function register()                                           //验证码显示
 	{
 	   $this->display();
