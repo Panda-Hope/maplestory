@@ -1,20 +1,27 @@
 webpackJsonp([4],{
 
-/***/ 32:
+/***/ 46:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(33)
+	var __vue_styles__ = {}
+	__vue_template__ = __webpack_require__(47)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./404.vue"
+	  var id = "_v-2fdfad18/index.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -24,10 +31,10 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 33:
+/***/ 47:
 /***/ function(module, exports) {
 
-	module.exports = "\n<h1>404 页面丢失</h1>\n";
+	module.exports = "\n<h1>Hello This IS Users</h1>\n";
 
 /***/ }
 

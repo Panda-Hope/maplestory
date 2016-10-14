@@ -1,0 +1,121 @@
+[ 2016-09-12T09:23:35+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.050003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.042003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.043003s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.1360s ]
+SQL: SELECT * FROM `big_ad_pic` LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `kxzb` [ RunTime:0.1030s ]
+SQL: SELECT * FROM `kxzb` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0430s ]
+SQL: SHOW COLUMNS FROM `xpzs` [ RunTime:0.1090s ]
+SQL: SELECT * FROM `xpzs` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `syxh` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `syxh` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `cwzx` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.023001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.023001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2016-09-12T09:23:42+08:00 ] 127.0.0.1 /index.php/Home/Index/indexVue?searchKey=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `big_ad_pic` LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `kxzb` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `kxzb` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xpzs` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xpzs` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `syxh` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `syxh` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cwzx` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-12T09:23:48+08:00 ] 127.0.0.1 /index.php/Home/Index/indexVue?searchKey=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `big_ad_pic` LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `kxzb` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `kxzb` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xpzs` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xpzs` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `syxh` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `syxh` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cwzx` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-12T09:23:49+08:00 ] 127.0.0.1 /index.php/Home/Index/indexVue?searchKey=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `big_ad_pic` LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `kxzb` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `kxzb` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xpzs` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xpzs` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `syxh` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `syxh` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cwzx` ORDER BY id desc LIMIT 0,15   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-12T09:24:32+08:00 ] 127.0.0.1 /index.php/Home/Index/getProductsMsgVue?type=cwzx&id=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `cwzx` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2016-09-12T09:28:13+08:00 ] 127.0.0.1 /index.php/Home/Index/getProductsMsgVue?type=cwzx&id=16
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `big_ad_pic` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `cwzx` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cwzx` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

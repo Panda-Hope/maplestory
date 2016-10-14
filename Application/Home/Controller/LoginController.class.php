@@ -14,13 +14,17 @@ class Logincontroller extends Controller
 		$check['name']=I('post.user');
 		$check['password']=md5(I('post.password'));
 		$result=$m->field('name,photo,password')->where($check)->find();
+		
 		if ($result)
 		{
 			cookie('user',$_POST['user'],3600);
 			cookie('password',md5(I('post.password')),3600);
+			cookie('photo', $result['photo']);
+
 			session('user',$result['name']);
 			session('password',$result['password']);
 			session('photo',$result['photo']);
+			
 			$this->ajaxReturn(true);
 		}
 		else

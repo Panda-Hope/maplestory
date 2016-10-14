@@ -6,7 +6,7 @@
 	        <div class="modal-content">
 	          <div class="modal-header">
 	            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-	            <canvas class="modal-title maple-logo" width="300" height="50"  id="mapleLogo">MapleStory</canvas>
+	            <maple-logo></maple-logo>
 	          </div>
 	          <div class="modal-body">
 	            <img :src=" './assets/image/' + modalPath " >
@@ -34,12 +34,10 @@
 </template>
 
 <script>
-    import maple from '../../assets/js/mapleFontLogo.js';
-
 	export default {
-		ready() {
-			maple.renderLogo();
-		},
-		props: ['modalName', 'modalPrice', 'modalPath']
+		props: ['modalName', 'modalPrice', 'modalPath'],
+		components: {
+			mapleLogo: require('./mapleFontLogo.vue')
+		}
 	};
 </script>

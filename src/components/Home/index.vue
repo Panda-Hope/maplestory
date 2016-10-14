@@ -21,7 +21,7 @@
         width: 100%;
         height: 500px;
         z-index: -999;
-        background:url(../../assets/image/home_bg0819.jpg) no-repeat center top;
+        background:url(../../assets/image/bg160927.jpg) no-repeat center top;
     }
     .logo-special {
         height:70px;
@@ -371,23 +371,24 @@
                 </div>
                 <div class="purchase">
                     <img src="../../assets/image/cart.png">
-                    <a data-toggle="modal" data-target="#myModal" @click="getProductMsg('kxzb', item.id)">购买</a>
+                    <a data-toggle="modal" 
+                       data-target="#myModal" 
+                       @click="getProductMsg('kxzb', item.id)">购买</a>
                 </div>
             </div>
         </div>
     </section>
-    <login-window></login-window>
     <shopping-modal 
       :modal-name=" modal.name " 
       :modal-price=" modal.price" 
       :modal-path=" modal.path ">
     </shopping-modal>
-    
+    <login-window></login-window>
 </template>
 
 <script>
     //require('../../assets/js/digitDowntime');
-    import interactive from '../../assets/js/interactive/interactive.js';
+    import interactive from '../../assets/js/interactive/interactive';
 
     export default {
         data() {
