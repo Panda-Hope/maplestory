@@ -858,6 +858,16 @@ webpackJsonp([1],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
+		ready: function ready() {
+			var _context = this;
+			$.proxy(_userLogin2.default.init, _userLogin2.default)(_context);
+		},
+		data: function data() {
+			return {
+				noticeData: {}
+			};
+		},
+
 		methods: {
 			userLogin: function userLogin(e) {
 				e && e.preventDefault();
@@ -867,7 +877,8 @@ webpackJsonp([1],[
 			}
 		},
 		components: {
-			mapleLogo: __webpack_require__(17)
+			mapleLogo: __webpack_require__(17),
+			noticeModal: __webpack_require__(123)
 		}
 	};
 
@@ -875,7 +886,7 @@ webpackJsonp([1],[
 /* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n    <!-- Modal -->\n    <div class=\"modal fade maple-login maple\" id=\"myModal2\" tabindex=\"-1\" >\n      <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n\t        <div class=\"modal-body\">\n\t            <maple-logo></maple-logo>\n\t            <img src=\"" + __webpack_require__(36) + "\" class=\"leave\" data-dismiss=\"modal\" />\n\t            <div class=\"login-form\">\n\t            \t<form name=\"userLogin\" method=\"post\">\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">用户名：</label>\n\t\t            \t\t<input name=\"user\" type=\"text\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>\n\t\t            \t\t<input name=\"password\" type=\"password\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<button class=\"login-button btn\" @click=\"userLogin\">登录</button>\n\t            \t</form>\n\t            </div>\n\t        </div>\n        </div>\n      </div>\n    </div>\n</section>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n    <!-- Modal -->\n    <div class=\"modal fade maple-login maple\" id=\"myModal2\" tabindex=\"-1\" >\n      <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n\t        <div class=\"modal-body\">\n\t            <maple-logo></maple-logo>\n\t            <img src=\"" + __webpack_require__(36) + "\" class=\"leave\" data-dismiss=\"modal\" />\n\t            <div class=\"login-form\">\n\t            \t<form name=\"userLogin\" method=\"post\">\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">用户名：</label>\n\t\t            \t\t<input name=\"user\" type=\"text\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>\n\t\t            \t\t<input name=\"password\" type=\"password\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<button class=\"login-button btn\" @click=\"userLogin\">登录</button>\n\t            \t</form>\n\t            </div>\n\t        </div>\n        </div>\n      </div>\n    </div>\n</section>\n<notice-modal :notice-data=\"noticeData\"></notice-modal>\n";
 
 /***/ },
 /* 36 */
@@ -912,6 +923,144 @@ webpackJsonp([1],[
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE1klEQVR4nMWWXYxdVRXHf2vtc+98MNYW0xas2qRGE/ugD9qqWKwYExMSMRoeeCSKDyXF4EcoiUAjpRLQWBGRBEj8eNGiiQ8+kpjQoUSY+hEl+IGJVGltrcOH03bmnLP3+vtw5+Iw3Du9MwZcL/9z9tr/vf7nv1f2PvB/Dus/xJ07DxCMU3W+4fuOnn5dBeSDO+717uRevIJ6jhAPWao+n25+fP61FuAAFmV3VF3ojMPURnxs8jrl+ni584MbXmsBFUCkzmf87Ox98monk+ugMxmGbYz5l34IfAIgH9zxBjAhW5S9xgiByRDnqltmwpbm8sGd7yM3P9fUmy7x1EFzZwhPU1byPjO/FQf0PxSH3qbLIMpMdduvd1ZLc9VXnjzW3rHjk5qfe0IXbSBSF8vNFYGmvepg4+sCyYGg58Pq0cyjPo81Z38GA8zs3DLzpHJdS4GlCql8RPIjamoUxUMZKa8ZpYIW5pCl+wYKAFBoRrlFlogSl43v/1UdpT0uFaxAFGJNGISaBSQ93L312L+HCzCmlWtkIOL9vUGm1TaIwAhfG8rL/Flw/2q/1rB+PlraBQhCJD+3/91bCzqiXKMIVCJUVokRRNug0vxyfP9vnn657wZVj9ATVlo0Fm6eiNx8GDhS2oZUTQDqCx8dZZT5Ocyr25bWGujARQd+/69S2tOKjDyhUj40dcdTf4q2bfsOhFaHipbI9V8nb//dIxcUACDxuNoG3FHkXQCKckylIQi3iJFRyPP5s8j89uV1hguAx6KtQULYu3qiNB25hYhQFIgyEioy0S6cWfe1P3x/eZ2BPQBAxNFSGkxjgPlLN7/zPYQezfW5m2jm3fTfDxC4DUE3iAjM7a5BZWzQYD9e+PLbVU29kVLXRK6/ePHX/3LoxZve8RbMJjGTQYfeKVeGOqme0vV3/fmZQfnhDgAR5WnlvN0dSsmXA4fW3/3McytxVhsrClDo0SjtdkuVFGX37Je2rSdU9X1bPODPIWKlGzICMLUbv/lsLM+tuAVnbtx6TaqqH6XuBLlZoOQWexVDr4CBYUCoCP3WPH1846Hjs/3Uig5AHMltg3e6SlXXUqe75lvQUMpN/d7cNtcDB0ZyAODUDVseSZ4+pld/+qrCTJQ2y1Pavumev/9xZAEA/9h76RVgafE1uZPAQcLcX94WCRRBbyCIoKXnggEVZjOX3ntidunaF9iCxYUDg3xVbzH/6ebvnHpsFN7J6zftRXwA4zSkB9783ZOzy+dc0IETezZ9D7drO1UXgDY3EPrWlvv/+YXhhS+ZiChPdaruNq8SkmibGvBrttx/6vDSuSv+Xj63Z9NVZlw7NjaBu+PujI1NIHHjiT2bdw3jRZR7Op3uttSpMDPcnfGxCSLyj0/u2TwxsgDl/OmUOihKoEKoBFHodCoiytVDBZRypXti8WeAUAkRVFWFonx06dyVDyKzkAJkvthJLoQk1D9jB/GkLBWMZbxSCKkd2QGTDjd1jQhZr2iIoKlrzOzwUJ7Zw23TICn6vCiFJufzZvaLV8xdSQDA8es2fNudG6qqA0BuWgLu3vrQC/tW4j372fXTKaVd1WITNk2rlNLutz4wO70qAQB/+9zFl5USnwLCk/9k64PPHxuRd2UpcbkZp9z9B2978PkXR+G9rvEfmqGMju1uUa4AAAAASUVORK5CYII="
+
+/***/ },
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(125)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\Common\\noticeModal.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(124)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-d787dc52/noticeModal.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 124 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<section>\n    <!-- Modal -->\n    <div class=\"modal fade maple\" id=\"noticeModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n      <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span>&times;</span></button>\n            <maple-logo></maple-logo>\n          </div>\n          <div class=\"modal-body\">\n            <span>{{ noticeData.msg }}</span>\n            \n          </div>\n          <div class=\"modal-footer\">\n            <button type=\"button\" class=\"btn btn-default\">加入购物车</button>\n            <button type=\"button\" class=\"btn btn-primary\">直接购买</button>\n          </div>              \n        </div>\n      </div>\n    </div>\n</section>\n";
+
+/***/ },
+/* 125 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		props: ['noticeData'],
+		components: {
+			mapleLogo: __webpack_require__(17)
+		}
+	};
 
 /***/ }
 ]);

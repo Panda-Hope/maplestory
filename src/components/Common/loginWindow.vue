@@ -109,7 +109,7 @@
 		if (!$target.length) {
 			return false;
 		}
-
+		
 		return $target.hasClass('active') ? $target.removeClass('active') : $target.addClass('active');
 	}
 	

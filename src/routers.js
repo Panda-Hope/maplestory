@@ -28,7 +28,8 @@ export default function(router) {
                 '*': {
                     component: function(resolve) {
                         require(['./components/Common/404.vue'], resolve);
-                    }
+                    },
+                    requireAuth: false
                 }
         });
 };

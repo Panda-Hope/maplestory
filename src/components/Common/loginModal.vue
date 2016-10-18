@@ -65,12 +65,24 @@
 	      </div>
 	    </div>
 	</section>
+	<notice-modal :notice-data="noticeData"></notice-modal>
 </template>
 
 <script>
 	import Users from '../../assets/js/interactive/userLogin';
-
+	
 	export default {
+		ready() {
+			//propagate vue context and other options to users class
+			let _context = this;
+			$.proxy(Users.init, Users)(_context);
+			// $.proxy(Users.showNotice, Users)({});
+		},
+		data() {
+			return {
+				noticeData: {} 
+			};
+		},
 		methods: {
 			userLogin: function(e) {
 				e && e.preventDefault();
@@ -80,7 +92,8 @@
 			}
 		},
 		components: {
-			mapleLogo: require('./mapleFontLogo.vue')
+			mapleLogo: require('./mapleFontLogo.vue'),
+			noticeModal: require('./noticeModal.vue')
 		}
 	};
 </script>

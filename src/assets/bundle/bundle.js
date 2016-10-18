@@ -131,10 +131,9 @@
 	(0, _routers2.default)(router);
 
 	router.beforeEach(function (transition) {
-	    // login check
-	    transition.to.requireAuth && !_userLogin2.default.getUserMsg().user && transition.redirect({ path: '/' });
-
-	    transition.next();
+	   // login check
+	   transition.to.requireAuth && !_userLogin2.default.isLogin() && transition.redirect({ path: '/' });
+	   transition.next();
 	});
 
 	router.start({}, '#app');
@@ -14546,7 +14545,8 @@
 	        '*': {
 	            component: function component(resolve) {
 	                __webpack_require__.e/* require */(5, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(48)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
-	            }
+	            },
+	            requireAuth: false
 	        }
 	    });
 	};
@@ -14593,12 +14593,78 @@
 		this.vue;
 		this.elem;
 		this.userMsg = {};
+		this.modalApi = '#noticeModal'; // notice modal api
 	};
 
 	Users.VERSION = '1.0.0';
 	Users.AUTHOR = 'Hope';
 	Users.EMAIL = '494873674@qq.com';
-	Users.LAST_UPDATE_TIME = '2016-10-13';
+	Users.LAST_UPDATE_TIME = '2016-10-18';
+
+	/* ====================
+	 * INITIALIZATION CLASS
+	 * ==================== */
+	Users.prototype.init = function (_relatedContext, options) {
+		_relatedContext && (this.vue = _relatedContext);
+
+		if (options === undefined || !$.isPlainObject(options)) {
+			return;
+		}
+
+		for (var item in options) {
+			switch (item) {
+				case 'modalApi':
+					this.modalApi = options[item];
+					break;
+			}
+		}
+	};
+
+	/* ===========================
+	 * AVALIABLE DATA OBJECT LISTS
+	 * data {msg: '', img: ''}
+	 * ===========================*/
+	Users.prototype.showNotice = function (data) {
+		if (!$.isPlainObject(data) && this.hasNoticeModal() || this.spareNotice(data)) {
+			return false;
+		}
+
+		this.vue.noticeData = data; // Synchronize notice data
+		var modalApi = this.modalApi;
+
+		$(modalApi).modal('show');
+	};
+
+	Users.prototype.hideNotice = function () {
+		var modalApi = this.modalApi;
+
+		$(modalApi).modal('hide');
+	};
+
+	//if not install notice modal , use this spare method
+	Users.prototype.spareNotice = function (data) {
+		data.msg && alert(data.msg);
+		return true;
+	};
+
+	Users.prototype.hasNoticeModal = function () {
+		if (!this.vue) {
+			return false;
+		}
+
+		var _relatedContext = this.vue,
+		    components = _relatedContext.$options.components,
+		    result = false;
+
+		for (var name in components) {
+			if (name == 'noticeModal') {
+				result = true;
+			}
+		}
+
+		result || console.warn('please install notice modal components to get better experience');
+		return result;
+	};
 
 	Users.prototype.login = function (_relatedTarget, _relatedContext) {
 		if (this.isLogin()) {
@@ -14606,7 +14672,7 @@
 		}
 
 		this.elem = _relatedTarget;
-		this.vue = _relatedContext;
+		this.vue = this.vue || _relatedContext;
 
 		var $formElem = $($(_relatedTarget).closest('[name="userLogin"]')),
 		    _self = this;
@@ -14619,7 +14685,11 @@
 					// sign in success, record user msg
 					_self.recordMsg() && location.reload(true);
 				} else {
-					// sign in fail, waitting the notice modal vue
+					// sign in fail
+					var _data = {
+						msg: '验证失败请重新输入'
+					};
+					this.showNotice(_data);
 				}
 			});
 		} else {
@@ -14666,6 +14736,10 @@
 	};
 
 	Users.prototype.getUserMsg = function () {
+		if (!this.isLogin()) {
+			return { length: 0 }; // for not login
+		}
+
 		if (this.userMsg.length > 0 && this.userMsg.user) {
 			return this.userMsg;
 		}

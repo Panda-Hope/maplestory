@@ -20,8 +20,7 @@ routerMap(router);
 
 router.beforeEach(function(transition) {
 	// login check
-    transition.to.requireAuth && (!Users.getUserMsg().user && transition.redirect({path: '/'}));
-
+    transition.to.requireAuth && (!Users.isLogin() && transition.redirect({path: '/'}));
     transition.next();
 });
 
