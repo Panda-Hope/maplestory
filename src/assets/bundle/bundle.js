@@ -117,6 +117,10 @@
 
 	var _effects2 = _interopRequireDefault(_effects);
 
+	var _userLogin = __webpack_require__(29);
+
+	var _userLogin2 = _interopRequireDefault(_userLogin);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_vue2.default.use(_vueResource2.default);
@@ -128,7 +132,7 @@
 
 	router.beforeEach(function (transition) {
 	    // login check
-	    transition.to.requireAuth && (localStorage.userName ? transition.next() : transition.redirect({ path: '/' }));
+	    transition.to.requireAuth && !_userLogin2.default.getUserMsg().user && transition.redirect({ path: '/' });
 
 	    transition.next();
 	});
@@ -14573,7 +14577,223 @@
 /* 26 */,
 /* 27 */,
 /* 28 */,
-/* 29 */,
+/* 29 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	if (typeof jQuery === 'undefined') {
+		throw new Error('Users Class Needs jQuery');
+	}
+
+	var Users = function Users() {
+		this.vue;
+		this.elem;
+		this.userMsg = {};
+	};
+
+	Users.VERSION = '1.0.0';
+	Users.AUTHOR = 'Hope';
+	Users.EMAIL = '494873674@qq.com';
+	Users.LAST_UPDATE_TIME = '2016-10-13';
+
+	Users.prototype.login = function (_relatedTarget, _relatedContext) {
+		if (this.isLogin()) {
+			return;
+		}
+
+		this.elem = _relatedTarget;
+		this.vue = _relatedContext;
+
+		var $formElem = $($(_relatedTarget).closest('[name="userLogin"]')),
+		    _self = this;
+
+		if ($formElem.length == 1) {
+			var data = this.serializeObject($formElem.serializeArray());
+
+			this.vue.$http.post('../index.php/Home/Login/check', data).then(function (response) {
+				if (response.data) {
+					// sign in success, record user msg
+					_self.recordMsg() && location.reload(true);
+				} else {
+					// sign in fail, waitting the notice modal vue
+				}
+			});
+		} else {
+			return;
+		}
+	};
+
+	/* ================
+	 * RECORD USER MSG
+	 * ================ */
+	Users.prototype.recordMsg = function () {
+		var cookies = this.objectConversion(document.cookie);
+
+		if (!cookies.user) {
+			// cookie setting fail
+			// waitting the notice modal vue
+			return false;
+		}
+
+		if (this.storageAvailable()) {
+			for (var name in cookies) {
+				localStorage.setItem(name, cookies[name]);
+			}
+
+			this.userMsg = localStorage;
+		} else {
+			// browser not support storage
+			this.userMsg = cookies;
+		}
+
+		return true;
+	};
+
+	Users.prototype.check = function () {};
+
+	Users.prototype.isLogin = function () {
+		if (this.storageAvailable()) {
+			return localStorage.getItem('user') != undefined ? this.verifying(localStorage) : false;
+		} else {
+			var cookies = this.objectConversion(document.cookie);
+
+			return cookies.user !== undefined ? this.verifying(cookies) : false;
+		}
+	};
+
+	Users.prototype.getUserMsg = function () {
+		if (this.userMsg.length > 0 && this.userMsg.user) {
+			return this.userMsg;
+		}
+
+		var cookies = {};
+		if (this.storageAvailable && localStorage.user) {
+			return localStorage;
+		} else if ((cookies = this.objectConversion(document.cookie)) && cookies.user) {
+			return cookies;
+		}
+
+		return { length: 0 }; //no data exit return a plain object
+	};
+
+	Users.prototype.signOut = function (_relatedContext) {
+		if (!this.isLogin) {
+			return;
+		}
+
+		this.vue = this.vue || _relatedContext;
+		this.vue.$http.get('../index.php/Home/Login/signout'); // delete cookie by server 
+
+		if (this.storageAvailable()) {
+			for (var name in localStorage) {
+				localStorage.removeItem(name);
+			}
+		}
+
+		location.reload(true); // refresh the current html
+	};
+
+	/* ==============================
+	 * VERIFY USER MSG WHETHER MATCH 
+	 * ==============================*/
+	Users.prototype.verifying = function (obj) {
+		if (obj.length <= 0 || !obj.user || !obj.password) {
+			return false;
+		}
+
+		var result = void 0;
+		// it can be optimaztion
+		$.ajax('../index.php/Home/Login/verifying', {
+			data: obj,
+			type: 'post',
+			datType: 'json',
+			async: false
+		}).done(function (response) {
+			if (response === true) {
+				result = true;
+			} else {
+				result = false;
+			}
+		});
+		return result;
+	};
+
+	/* =================================================
+	 * CONVERSION STRING LIKE DOCUMENT COOKIE TO OBJECT 
+	 * ================================================= */
+	Users.prototype.objectConversion = function (string) {
+		if (!string) {
+			return {};
+		}
+
+		var arr = string.split(';'),
+		    obj = {},
+		    length = 0; // count array length
+
+		for (var i = 0; i < arr.length; i++) {
+			var a = arr[i].split('=');
+
+			obj[a[0].trim()] = a[1].trim();
+			length++;
+		}
+		obj.length = length;
+
+		return obj;
+	};
+
+	/* =====================================
+	 *	BROWSER STORAGE FEATURES DETECTION
+	 * ===================================== */
+	Users.prototype.storageAvailable = function (type) {
+		if (type === undefined) {
+			type = 'localStorage';
+		}
+
+		try {
+			var storage = window[type],
+			    test = '__storage_test__';
+
+			storage.setItem(test, test);
+			storage.removeItem(test, test);
+
+			return true;
+		} catch (e) {
+			return false;
+		}
+	};
+
+	/* =====================================
+	 * CONVERSION FORM DATA TO OBJECT SHAPE
+	 * =====================================*/
+	Users.prototype.serializeObject = function (serializeArrary) {
+		if (!(serializeArrary instanceof Array)) {
+			return;
+		}
+
+		var o = {},
+		    a = serializeArrary;
+
+		$.each(a, function () {
+			if (o[this.name] !== undefined) {
+				if (!o[this.name].push) {
+					o[this.name] = [o[this.name]];
+				}
+				o[this.name].push(this.value || '');
+			} else {
+				o[this.name] = this.value || '';
+			}
+		});
+
+		return o;
+	};
+
+	exports.default = new Users();
+
+/***/ },
 /* 30 */,
 /* 31 */,
 /* 32 */,

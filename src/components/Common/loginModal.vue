@@ -76,7 +76,6 @@
 				e && e.preventDefault();
 				
 				let elem = e.target || e.srcElement;  // for support ie6-8
-				
 				$.proxy(Users.login, Users)(elem, this);
 			}
 		},

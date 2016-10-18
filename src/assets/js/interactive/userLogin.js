@@ -3,7 +3,7 @@ if (typeof jQuery === 'undefined') {
 }
 
 let Users = function() {
-	this.vue = {};
+	this.vue;
 	this.elem;
 	this.userMsg = {};
 };
@@ -14,6 +14,10 @@ Users.EMAIL = '494873674@qq.com';
 Users.LAST_UPDATE_TIME = '2016-10-13';
 
 Users.prototype.login = function(_relatedTarget, _relatedContext) {
+	if (this.isLogin()) {
+		return;
+	}
+
 	this.elem = _relatedTarget;
 	this.vue = _relatedContext;
 
@@ -26,7 +30,7 @@ Users.prototype.login = function(_relatedTarget, _relatedContext) {
 		this.vue.$http.post('../index.php/Home/Login/check', data).then(function(response) {
 			if (response.data) {
 				// sign in success, record user msg
-				_self.recordMsg();
+				_self.recordMsg() && location.reload(true);
 			}else {
 				// sign in fail, waitting the notice modal vue
 			}
@@ -68,14 +72,71 @@ Users.prototype.check = function() {
 
 Users.prototype.isLogin = function() {
 	if (this.storageAvailable()) {
-		return localStorage.getItem('user') != undefined ? true : false;
+		return localStorage.getItem('user') != undefined ?  this.verifying(localStorage): false;
 	}else {
-		return this.objectConversion(document.cookie).user !== undefined ? true : false;
+		let cookies = this.objectConversion(document.cookie);
+
+		return cookies.user !== undefined ? this.verifying(cookies) : false;
 	}
 };
 
+
 Users.prototype.getUserMsg = function() {
-	return {};
+	if (this.userMsg.length > 0 && this.userMsg.user) {
+		return this.userMsg;
+	}
+
+	let cookies = {};
+	if (this.storageAvailable && localStorage.user) {
+		return localStorage;
+	}else if ((cookies = this.objectConversion(document.cookie)) && cookies.user) {
+		return cookies;
+	}
+
+	return {length: 0}; //no data exit return a plain object
+};
+
+Users.prototype.signOut = function(_relatedContext) {
+	if (!this.isLogin) {
+		return;
+	}
+
+	this.vue = this.vue || _relatedContext;
+	this.vue.$http.get('../index.php/Home/Login/signout');  // delete cookie by server 
+
+	if (this.storageAvailable()) {
+		for (let name in localStorage) {
+			localStorage.removeItem(name);
+		}
+	}
+
+	location.reload(true);  // refresh the current html
+};
+
+
+/* ==============================
+ * VERIFY USER MSG WHETHER MATCH 
+ * ==============================*/
+Users.prototype.verifying = function(obj) {
+	if (obj.length<=0 || !obj.user || !obj.password) {
+		return false;
+	}
+
+	let result;
+	// it can be optimaztion
+	$.ajax('../index.php/Home/Login/verifying', {
+		data: obj,
+		type: 'post',
+		datType: 'json',
+		async: false
+	}).done(function(response) {
+		if (response === true) {
+			result = true;
+		}else {
+			result = false;
+		}
+	});
+	return result;
 };
 
 /* =================================================
@@ -145,10 +206,6 @@ Users.prototype.serializeObject = function(serializeArrary) {
     });
 
     return o;
-};
-
-Users.prototype.signOut = function() {
-	
 };
 
 export default new Users;

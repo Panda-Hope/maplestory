@@ -1,0 +1,24 @@
+[ 2016-10-17T16:49:10+08:00 ] 127.0.0.1 /index.php/src.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Src
+
+[ 2016-10-17T17:18:04+08:00 ] 127.0.0.1 /index.php/src.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Src
+
+[ 2016-10-17T17:18:07+08:00 ] 127.0.0.1 /index.php/src.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Src
+
+[ 2016-10-17T17:22:02+08:00 ] 127.0.0.1 /index.php/src.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Src
+

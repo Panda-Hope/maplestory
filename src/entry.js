@@ -8,6 +8,9 @@ import routerMap from './routers';
 
 import effects from './assets/js/effects';
 
+import Users from './assets/js/interactive/userLogin';
+
+
 Vue.use(VueResource);
 Vue.http.options.emulateJSON = true;  //for support form submit in php
 
@@ -17,7 +20,7 @@ routerMap(router);
 
 router.beforeEach(function(transition) {
 	// login check
-    transition.to.requireAuth && (localStorage.userName ? transition.next() : transition.redirect({path: '/'}));
+    transition.to.requireAuth && (!Users.getUserMsg().user && transition.redirect({path: '/'}));
 
     transition.next();
 });

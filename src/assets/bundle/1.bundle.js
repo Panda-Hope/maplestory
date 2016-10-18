@@ -690,7 +690,7 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".login-motion {\n  position: fixed;\n  right: 0;\n  top: 300px;\n  width: 180px;\n  height: 350px; }\n  .login-motion .arrow, .login-motion .content {\n    position: absolute; }\n  .login-motion .arrow {\n    right: 0;\n    top: 100px;\n    width: 40px;\n    height: 80px;\n    border-radius: 4px;\n    z-index: 200;\n    background: url(" + __webpack_require__(26) + ") no-repeat; }\n  .login-motion .arrow:hover {\n    -webkit-transform: rotateY(180deg);\n            transform: rotateY(180deg); }\n  .login-motion .content {\n    left: 100%;\n    top: 0;\n    width: 180px;\n    height: 330px;\n    background: url(" + __webpack_require__(27) + ") no-repeat;\n    background-size: 180px 330px;\n    z-index: 600;\n    border-radius: 10px;\n    -webkit-transition: left .4s linear;\n    transition: left .4s linear; }\n  .login-motion .content.active {\n    left: 0; }\n  .login-motion .circle {\n    width: 120px;\n    height: 120px;\n    margin: 30px auto;\n    border: 2px solid #fff;\n    border-radius: 50%;\n    text-align: center;\n    line-height: 120px;\n    font-size: 30px;\n    -webkit-transition-property: border-color,box-shadow;\n    transition-property: border-color,box-shadow;\n    -webkit-transition-duration: .3s;\n            transition-duration: .3s;\n    -webkit-transition-timing-function: ease-in;\n            transition-timing-function: ease-in; }\n  .login-motion .circle:hover {\n    border-color: rgba(195, 195, 195, 0.2);\n    box-shadow: 2px 0 8px 6px rgba(195, 195, 195, 0.1); }\n  .login-motion .circle a {\n    color: #C0C; }\n", ""]);
+	exports.push([module.id, ".login-motion .arrow, .login-motion .content {\n  position: fixed;\n  right: 0; }\n\n.login-motion .arrow {\n  top: 400px;\n  width: 40px;\n  height: 80px;\n  border-radius: 4px;\n  z-index: 200;\n  background: url(" + __webpack_require__(26) + ") no-repeat; }\n\n.login-motion .arrow:hover {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg); }\n\n.login-motion .content {\n  top: 300px;\n  width: 180px;\n  height: 330px;\n  background: url(" + __webpack_require__(27) + ") no-repeat;\n  background-size: 180px 330px;\n  z-index: 600;\n  border-radius: 10px;\n  -webkit-transform: translateX(180px);\n          transform: translateX(180px);\n  -webkit-transition: -webkit-transform .4s linear;\n  transition: -webkit-transform .4s linear;\n  transition: transform .4s linear;\n  transition: transform .4s linear, -webkit-transform .4s linear; }\n\n.login-motion .content.active {\n  -webkit-transform: translateX(0);\n          transform: translateX(0); }\n\n.login-motion .circle {\n  overflow: hidden;\n  width: 120px;\n  height: 120px;\n  margin: 30px auto;\n  border: 2px solid #fff;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 120px;\n  font-size: 30px;\n  -webkit-transition-property: border-color,box-shadow;\n  transition-property: border-color,box-shadow;\n  -webkit-transition-duration: .3s;\n          transition-duration: .3s;\n  -webkit-transition-timing-function: ease-in;\n          transition-timing-function: ease-in; }\n  .login-motion .circle img {\n    display: block;\n    max-width: 100%;\n    height: auto; }\n\n.login-motion .circle:hover {\n  border-color: rgba(195, 195, 195, 0.2);\n  box-shadow: 2px 0 8px 6px rgba(195, 195, 195, 0.1); }\n\n.login-motion .circle a {\n  color: #C0C; }\n", ""]);
 
 	// exports
 
@@ -739,13 +739,12 @@ webpackJsonp([1],[
 	$(document).on('mouseenter', slideApi, Slide).on('mouseleave', slideContentApi, Slide);
 
 	exports.default = {
-		ready: function ready() {
-			var _self = this;
+		methods: {
+			signOut: function signOut(e) {
+				e && e.preventDefault();
 
-			setTimeout(2000, function () {
-				_self.isLogin = false;
-				console.log(_self.isLogin);
-			});
+				$.proxy(_userLogin2.default.signOut, _userLogin2.default)(this);
+			}
 		},
 		data: function data() {
 			return {
@@ -760,166 +759,7 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 29 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	if (typeof jQuery === 'undefined') {
-		throw new Error('Users Class Needs jQuery');
-	}
-
-	var Users = function Users() {
-		this.vue = {};
-		this.elem;
-		this.userMsg = {};
-	};
-
-	Users.VERSION = '1.0.0';
-	Users.AUTHOR = 'Hope';
-	Users.EMAIL = '494873674@qq.com';
-	Users.LAST_UPDATE_TIME = '2016-10-13';
-
-	Users.prototype.login = function (_relatedTarget, _relatedContext) {
-		this.elem = _relatedTarget;
-		this.vue = _relatedContext;
-
-		var $formElem = $($(_relatedTarget).closest('[name="userLogin"]')),
-		    _self = this;
-
-		if ($formElem.length == 1) {
-			var data = this.serializeObject($formElem.serializeArray());
-
-			this.vue.$http.post('../index.php/Home/Login/check', data).then(function (response) {
-				if (response.data) {
-					// sign in success, record user msg
-					_self.recordMsg();
-				} else {
-					// sign in fail, waitting the notice modal vue
-				}
-			});
-		} else {
-			return;
-		}
-	};
-
-	/* ================
-	 * RECORD USER MSG
-	 * ================ */
-	Users.prototype.recordMsg = function () {
-		var cookies = this.objectConversion(document.cookie);
-
-		if (!cookies.user) {
-			// cookie setting fail
-			// waitting the notice modal vue
-			return false;
-		}
-
-		if (this.storageAvailable()) {
-			for (var name in cookies) {
-				localStorage.setItem(name, cookies[name]);
-			}
-
-			this.userMsg = localStorage;
-		} else {
-			// browser not support storage
-			this.userMsg = cookies;
-		}
-
-		return true;
-	};
-
-	Users.prototype.check = function () {};
-
-	Users.prototype.isLogin = function () {
-		if (this.storageAvailable()) {
-			return localStorage.getItem('user') != undefined ? true : false;
-		} else {
-			return this.objectConversion(document.cookie).user !== undefined ? true : false;
-		}
-	};
-
-	Users.prototype.getUserMsg = function () {
-		return {};
-	};
-
-	/* =================================================
-	 * CONVERSION STRING LIKE DOCUMENT COOKIE TO OBJECT 
-	 * ================================================= */
-	Users.prototype.objectConversion = function (string) {
-		if (!string) {
-			return {};
-		}
-
-		var arr = string.split(';'),
-		    obj = {},
-		    length = 0; // count array length
-
-		for (var i = 0; i < arr.length; i++) {
-			var a = arr[i].split('=');
-
-			obj[a[0].trim()] = a[1].trim();
-			length++;
-		}
-		obj.length = length;
-
-		return obj;
-	};
-
-	/* =====================================
-	 *	BROWSER STORAGE FEATURES DETECTION
-	 * ===================================== */
-	Users.prototype.storageAvailable = function (type) {
-		if (type === undefined) {
-			type = 'localStorage';
-		}
-
-		try {
-			var storage = window[type],
-			    test = '__storage_test__';
-
-			storage.setItem(test, test);
-			storage.removeItem(test, test);
-
-			return true;
-		} catch (e) {
-			return false;
-		}
-	};
-
-	/* =====================================
-	 * CONVERSION FORM DATA TO OBJECT SHAPE
-	 * =====================================*/
-	Users.prototype.serializeObject = function (serializeArrary) {
-		if (!(serializeArrary instanceof Array)) {
-			return;
-		}
-
-		var o = {},
-		    a = serializeArrary;
-
-		$.each(a, function () {
-			if (o[this.name] !== undefined) {
-				if (!o[this.name].push) {
-					o[this.name] = [o[this.name]];
-				}
-				o[this.name].push(this.value || '');
-			} else {
-				o[this.name] = this.value || '';
-			}
-		});
-
-		return o;
-	};
-
-	Users.prototype.signOut = function () {};
-
-	exports.default = new Users();
-
-/***/ },
+/* 29 */,
 /* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1023,7 +863,6 @@ webpackJsonp([1],[
 				e && e.preventDefault();
 
 				var elem = e.target || e.srcElement;
-
 				$.proxy(_userLogin2.default.login, _userLogin2.default)(elem, this);
 			}
 		},
@@ -1048,7 +887,7 @@ webpackJsonp([1],[
 /* 37 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n\t<div class=\"login-motion\">\n\t\t<div id=\"test\" class=\"arrow\"></div>\n\t\t<div class=\"content\">\n\t\t\t<template v-if=\"!isLogin\">\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a \n\t\t\t\t\tdata-toggle=\"modal\"\n\t\t\t\t\tdata-target=\"#myModal2\">登录</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/register' }\">注册</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t\t<template v-else>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/user' }\">\n\t\t\t\t\t\t<img :src=\" './assets/' + userMsg.photo\" >\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/register' }\">退出</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t</div>\n\t</div>\n</section>\n<login-modal></login-modal>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n\t<div class=\"login-motion\">\n\t\t<div class=\"arrow\"></div>\n\t\t<div class=\"content\">\n\t\t\t<template v-if=\"!isLogin\">\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a \n\t\t\t\t\tdata-toggle=\"modal\"\n\t\t\t\t\tdata-target=\"#myModal2\">登录</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/register' }\">注册</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t\t<template v-else>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/user' }\">\n\t\t\t\t\t\t<img :src=\" './assets/image/' + userMsg.photo\" >\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a @click=\"signOut\">退出</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t</div>\n\t</div>\n</section>\n<login-modal></login-modal>\n";
 
 /***/ },
 /* 38 */

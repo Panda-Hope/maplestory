@@ -4,17 +4,14 @@
 	$position-relative: relative;
 
 	.login-motion {
-		position: $position-fixed;
-		right: 0;
-		top: 300px;
-		width: 180px;
-		height: 350px;
+		// width: 180px;
+		// height: 350px;
 		.arrow,.content {
-			position: $position-absolute;
+			position: $position-fixed;
+			right: 0;
 		}
 		.arrow {
-			right: 0;
-			top: 100px;
+			top: 400px;
 			width: 40px;
 		    height: 80px;
 		    border-radius: 4px;
@@ -25,20 +22,21 @@
 			transform: rotateY(180deg);
 		}
 		.content {
-			left: 100%;
-			top: 0;
+			top: 300px;
 			width: 180px;
 		    height: 330px;
 		    background: url(../../assets/image/rect_bg_2.png) no-repeat;
 		    background-size: 180px 330px;
 		    z-index: 600;
 		    border-radius: 10px;
-		    transition: left .4s linear;
+		    transform: translateX(180px);
+		    transition: transform .4s linear;
 		}
 		.content.active {
-			left: 0;
+			transform: translateX(0);
 		}
 		.circle {
+			overflow: hidden;
 			width: 120px;
 			height: 120px;
 			margin: 30px auto;
@@ -50,6 +48,11 @@
 			transition-property: border-color,box-shadow;
 			transition-duration: .3s;
 			transition-timing-function: ease-in;
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
 		}
 		.circle:hover{
 		    border-color: rgba(195, 195, 195, 0.2);
@@ -65,7 +68,7 @@
 <template>
 	<section>
 		<div class="login-motion">
-			<div id="test" class="arrow"></div>
+			<div class="arrow"></div>
 			<div class="content">
 				<template v-if="!isLogin">
 					<div class="circle">
@@ -80,11 +83,11 @@
 				<template v-else>
 					<div class="circle">
 						<a v-link="{ path: '/user' }">
-							<img :src=" './assets/' + userMsg.photo" >
+							<img :src=" './assets/image/' + userMsg.photo" >
 						</a>
 					</div>
 					<div class="circle">
-						<a v-link="{ path: '/register' }">退出</a>
+						<a @click="signOut">退出</a>
 					</div>
 				</template>
 			</div>
@@ -119,13 +122,12 @@
 	import Users from '../../assets/js/interactive/userLogin'; 
 
 	export default {
-		ready() {
-			let _self = this;
+		methods: {
+			signOut: function(e) {
+				e && e.preventDefault();
 
-			setTimeout(2000, function() {
-				_self.isLogin = false;
-				console.log(_self.isLogin);
-			});
+				$.proxy(Users.signOut, Users)(this);
+			}
 		},
 		data() {
 			return {
