@@ -1,21 +1,34 @@
+<style lang="sass">
+	$noticeM-modal-width: 400px;
+
+	.notice {
+		&-modal {
+			width: $noticeM-modal-width
+		}
+		&-img {
+			width: 200px;
+			margin-top: -10px;
+		}
+	}
+</style>
 <template>
 	<section>
 	    <!-- Modal -->
 	    <div class="modal fade maple" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	      <div class="modal-dialog" role="document">
+	      <div class="modal-dialog notice-modal" role="document">
 	        <div class="modal-content">
 	          <div class="modal-header">
 	            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
 	            <maple-logo></maple-logo>
 	          </div>
 	          <div class="modal-body">
-	            <span>{{ noticeData.msg }}</span>
-	            
-	          </div>
-	          <div class="modal-footer">
-	            <button type="button" class="btn btn-default">加入购物车</button>
-	            <button type="button" class="btn btn-primary">直接购买</button>
-	          </div>              
+	            <template v-if="noticeData.img">
+	            	<img class="notice-img" :src="'./assets/image/' + noticeData.img">
+	            </template>
+	            <template v-else>
+	            	<h3>{{ noticeData.msg }}</h1>
+	            </template>
+	          </div>            
 	        </div>
 	      </div>
 	    </div>

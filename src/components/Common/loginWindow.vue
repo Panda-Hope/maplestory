@@ -119,7 +119,7 @@
 	$(document).on('mouseenter', slideApi, Slide)
 			   .on('mouseleave', slideContentApi, Slide);
 	
-	import Users from '../../assets/js/interactive/userLogin'; 
+	import {Users} from '../../assets/js/interactive/userLogin'; 
 
 	export default {
 		methods: {

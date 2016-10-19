@@ -2,11 +2,8 @@ if (typeof jQuery === 'undefined') {
 	throw new Error('Users Class Needs jQuery');
 }
 
+import Notice from '../notice';
 let Users = function() {
-	this.vue;
-	this.elem;
-	this.userMsg = {};
-	this.modalApi = '#noticeModal'; // notice modal api
 };
 
 Users.VERSION = '1.0.0';
@@ -14,71 +11,6 @@ Users.AUTHOR = 'Hope';
 Users.EMAIL = '494873674@qq.com';
 Users.LAST_UPDATE_TIME = '2016-10-18';
 
-/* ====================
- * INITIALIZATION CLASS
- * ==================== */
-Users.prototype.init = function(_relatedContext, options) {
-	_relatedContext && (this.vue = _relatedContext);
-
-	if (options === undefined || !$.isPlainObject(options)) {
-		return;
-	}
-
-	for (let item in options) {
-		switch (item) {
-			case 'modalApi':
-				this.modalApi = options[item]
-				break;
-		}
-	}
-};
-
-/* ===========================
- * AVALIABLE DATA OBJECT LISTS
- * data {msg: '', img: ''}
- * ===========================*/
-Users.prototype.showNotice = function(data) {
-	if (!$.isPlainObject(data) && this.hasNoticeModal() || this.spareNotice(data)) {
-		return false;
-	}
-
-
-	this.vue.noticeData = data; // Synchronize notice data
-	let modalApi = this.modalApi;
-
-	$(modalApi).modal('show');
-};
-
-Users.prototype.hideNotice = function() {
-	let modalApi = this.modalApi;
-
-	$(modalApi).modal('hide');
-};
-
-//if not install notice modal , use this spare method
-Users.prototype.spareNotice = function(data) {
-	data.msg && alert(data.msg);
-	return true;
-};
-
-Users.prototype.hasNoticeModal = function() {
-	if (!this.vue) {
-		return false;
-	}
-
-	let _relatedContext = this.vue,
-		components = _relatedContext.$options.components,
-		result = false;
-
-	for (let name in components) {
-		if (name == 'noticeModal') {
-			result = true;
-		}
-	}
-
-	result || console.warn('please install notice modal components to get better experience');
-	return result;
-};
 
 Users.prototype.login = function(_relatedTarget, _relatedContext) {
 	if (this.isLogin()) {
@@ -88,12 +20,12 @@ Users.prototype.login = function(_relatedTarget, _relatedContext) {
 	this.elem = _relatedTarget;
 	this.vue = this.vue || _relatedContext;
 
-	let $formElem = $($(_relatedTarget).closest('[name="userLogin"]')),
-		_self = this;
+	let $formElem = $($(_relatedTarget).closest('[name="userLogin"]'));
 
 	if ($formElem.length == 1) {
-		let data = this.serializeObject($formElem.serializeArray());
-		
+		let data = this.serializeObject($formElem.serializeArray()),
+		_self = this;
+
 		this.vue.$http.post('../index.php/Home/Login/check', data).then(function(response) {
 			if (response.data) {
 				// sign in success, record user msg
@@ -102,8 +34,9 @@ Users.prototype.login = function(_relatedTarget, _relatedContext) {
 				// sign in fail
 				let data = {
 					msg: '验证失败请重新输入',
+					img: 'f66fe171f6.jpg'
 				};
-				this.showNotice(data);
+				_self.noticeAvaliable() ? Notice.showNotice(data) : _self.spareNotice(data);
 			}
 		});
 	}else {
@@ -119,7 +52,13 @@ Users.prototype.recordMsg = function() {
 
 	if (!cookies.user) {
 		// cookie setting fail
-		// waitting the notice modal vue
+		let _self = this,
+			data = {
+				msg: '服务器繁忙，请稍后重试',
+				img: 'f66fe171f7.jpg'
+			};
+
+		_self.noticeAvaliable() ? Notice.showNotice(data) : _self.spareNotice(data);
 		return false;
 	}
 
@@ -237,6 +176,19 @@ Users.prototype.objectConversion = function(string) {
 	return obj;
 };
 
+/* ===========================
+ * NOTICE COMPONENT DETECTION
+ * ==========================*/
+Users.prototype.noticeAvaliable = function() {
+	return typeof Notice === undefined ? false : true;
+};
+
+//if not install notice class , use this spare method
+Users.prototype.spareNotice = function(data) {
+	console.warn('please install notice modal components to get better experience');
+	data.msg && alert(data.msg);
+};
+
 /* =====================================
  *	BROWSER STORAGE FEATURES DETECTION
  * ===================================== */
@@ -283,4 +235,5 @@ Users.prototype.serializeObject = function(serializeArrary) {
     return o;
 };
 
-export default new Users;
+let User = new Users;
+export {User as Users, Notice};

@@ -69,13 +69,13 @@
 </template>
 
 <script>
-	import Users from '../../assets/js/interactive/userLogin';
-	
+	import {Users,Notice} from '../../assets/js/interactive/userLogin';
+
 	export default {
 		ready() {
 			//propagate vue context and other options to users class
 			let _context = this;
-			$.proxy(Users.init, Users)(_context);
+			Notice.init(_context);
 			// $.proxy(Users.showNotice, Users)({});
 		},
 		data() {
