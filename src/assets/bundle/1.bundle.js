@@ -10,13 +10,13 @@ webpackJsonp([1],[
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(7)
+	__webpack_require__(126)
 	__vue_script__ = __webpack_require__(13)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\Home\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(43)
+	__vue_template__ = __webpack_require__(44)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -41,46 +41,8 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(8);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./index.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./index.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(9)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n#canvas {\n    position:fixed;\n    left:0;\n    top:0;\n    z-index:999;\n    background-color: aqua;\n}\n#canvas_2 {\n    position:fixed;\n    left:0;\n    top:0;\n    z-index:800;\n    opacity:0;\n    background:#FFF;\n}\n.bg_image {\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 500px;\n    z-index: -999;\n    background:url(" + __webpack_require__(10) + ") no-repeat center top;\n}\n.logo-special {\n    height:70px;\n    background:url(" + __webpack_require__(11) + ") no-repeat 0px -90px;\n}\n.mxd_logo {\n    position:absolute;\n    left: 490px;\n    top: -50px;\n}\n.login_pic {\n    position: absolute;\n    left: 0;\n    bottom: -300px;\n}\n.carousel {\n  position: relative;\n}\n.carousel-inner {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.carousel-inner > .item {\n  position: relative;\n  display: none;\n  -webkit-transition: .6s ease-in-out left;\n          transition: .6s ease-in-out left;\n}\n.carousel-inner > .item > img,\n.carousel-inner > .item > a > img {\n  line-height: 1;\n}\n@media all and (transform-3d), (-webkit-transform-3d) {\n  .carousel-inner > .item {\n    -webkit-transition: -webkit-transform .6s ease-in-out;\n            transition:-webkit-transform .6s ease-in-out;\n            transition:transform .6s ease-in-out;\n            transition:         transform .6s ease-in-out, -webkit-transform .6s ease-in-out;\n\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    -webkit-perspective: 1000px;\n            perspective: 1000px;\n  }\n  .carousel-inner > .item.next,\n  .carousel-inner > .item.active.right {\n    left: 0;\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n  }\n  .carousel-inner > .item.prev,\n  .carousel-inner > .item.active.left {\n    left: 0;\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n  }\n  .carousel-inner > .item.next.left,\n  .carousel-inner > .item.prev.right,\n  .carousel-inner > .item.active {\n    left: 0;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n  }\n}\n.carousel-inner > .active,\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  display: block;\n}\n.carousel-inner > .active {\n  left: 0;\n}\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n.carousel-inner > .next {\n  left: 100%;\n}\n.carousel-inner > .prev {\n  left: -100%;\n}\n.carousel-inner > .next.left,\n.carousel-inner > .prev.right {\n  left: 0;\n}\n.carousel-inner > .active.left {\n  left: -100%;\n}\n.carousel-inner > .active.right {\n  left: 100%;\n}\n.carousel-control {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  width: 15%;\n  font-size: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);\n  filter: alpha(opacity=50);\n  opacity: .5;\n}\n.carousel-control.left {\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);\n  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));\n  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);\n  background-repeat: repeat-x;\n}\n.carousel-control.right {\n  right: 0;\n  left: auto;\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);\n  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));\n  background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);\n  background-repeat: repeat-x;\n}\n.carousel-control:hover,\n.carousel-control:focus {\n  color: #fff;\n  text-decoration: none;\n  filter: alpha(opacity=90);\n  outline: 0;\n  opacity: .9;\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-left,\n.carousel-control .glyphicon-chevron-right {\n  position: absolute;\n  top: 50%;\n  z-index: 5;\n  display: inline-block;\n  margin-top: -10px;\n}\n.carousel-control .icon-prev,\n.carousel-control .glyphicon-chevron-left {\n  left: 50%;\n  margin-left: -10px;\n}\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-right {\n  right: 50%;\n  margin-right: -10px;\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next {\n  width: 20px;\n  height: 20px;\n  font-family: serif;\n  line-height: 1;\n}\n.carousel-control .icon-prev:before {\n  content: '\\2039';\n}\n.carousel-control .icon-next:before {\n  content: '\\203A';\n}\n.carousel-indicators {\n  position: absolute;\n  bottom: 10px;\n  left: 50%;\n  z-index: 15;\n  width: 60%;\n  padding-left: 0;\n  margin-left: -30%;\n  text-align: center;\n  list-style: none;\n}\n.carousel-indicators li {\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  margin: 1px;\n  text-indent: -999px;\n  cursor: pointer;\n  background-color: #000 \\9;\n  background-color: rgba(0, 0, 0, 0);\n  border: 1px solid #fff;\n  border-radius: 10px;\n}\n.carousel-indicators .active {\n  width: 12px;\n  height: 12px;\n  margin: 0;\n  background-color: #fff;\n}\n.carousel-caption {\n  position: absolute;\n  right: 15%;\n  bottom: 20px;\n  left: 15%;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);\n}\n.carousel-caption .btn {\n  text-shadow: none;\n}\n@media screen and (min-width: 768px) {\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-prev,\n  .carousel-control .icon-next {\n    width: 30px;\n    height: 30px;\n    margin-top: -15px;\n    font-size: 30px;\n  }\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .icon-prev {\n    margin-left: -15px;\n  }\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-next {\n    margin-right: -15px;\n  }\n  .carousel-caption {\n    right: 20%;\n    left: 20%;\n    padding-bottom: 30px;\n  }\n  .carousel-indicators {\n    bottom: 20px;\n  }\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
+/* 7 */,
+/* 8 */,
 /* 9 */
 /***/ function(module, exports) {
 
@@ -137,12 +99,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "bg160927.jpg?fc6c523776d371f40cf1bfc28be0cc49";
-
-/***/ },
+/* 10 */,
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -389,6 +346,7 @@ webpackJsonp([1],[
 	exports.default = {
 	    data: function data() {
 	        return {
+	            bgImage: 'bg160927.jpg',
 	            products: [],
 	            modal: { name: '系统错误', path: '1424_777385.GIF', price: '暂无' }
 	        };
@@ -408,7 +366,8 @@ webpackJsonp([1],[
 	    },
 	    components: {
 	        'shoppingModal': __webpack_require__(15),
-	        'loginWindow': __webpack_require__(23)
+	        'loginWindow': __webpack_require__(23),
+	        'headerComponent': __webpack_require__(128)
 	    }
 	};
 
@@ -631,7 +590,7 @@ webpackJsonp([1],[
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\Common\\loginWindow.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(42)
+	__vue_template__ = __webpack_require__(43)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -739,7 +698,7 @@ webpackJsonp([1],[
 			signOut: function signOut(e) {
 				e && e.preventDefault();
 
-				$.proxy(_userLogin.Users.signOut, _userLogin.Users)(this);
+				_userLogin.Users.signOut(this);
 			}
 		},
 		data: function data() {
@@ -750,24 +709,25 @@ webpackJsonp([1],[
 		},
 
 		components: {
-			loginModal: __webpack_require__(30)
+			loginModal: __webpack_require__(31)
 		}
 	};
 
 /***/ },
 /* 29 */,
-/* 30 */
+/* 30 */,
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(31)
-	__vue_script__ = __webpack_require__(34)
+	__webpack_require__(32)
+	__vue_script__ = __webpack_require__(35)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\Common\\loginModal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(40)
+	__vue_template__ = __webpack_require__(41)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -792,13 +752,13 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(32);
+	var content = __webpack_require__(33);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(12)(content, {});
@@ -818,7 +778,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(9)();
@@ -826,19 +786,19 @@ webpackJsonp([1],[
 
 
 	// module
-	exports.push([module.id, ".maple-login .modal-content {\n  width: 600px;\n  height: 400px;\n  background: url(" + __webpack_require__(33) + ") no-repeat;\n  background-size: 600px 400px; }\n\n.maple-login .leave {\n  position: absolute;\n  right: 0;\n  top: 0;\n  cursor: pointer; }\n\n.maple-login .login-form {\n  margin-top: 50px; }\n\n.maple-login .form-group {\n  margin-bottom: 30px; }\n\n.maple-login .form-control {\n  display: inline-block;\n  width: 200px; }\n\n.maple-login .form-name {\n  color: #fff;\n  font-size: 20px; }\n\n.maple-login .login-button {\n  width: 80px;\n  height: 40px;\n  margin-left: 30px;\n  background: #AFCD01;\n  color: #FFF;\n  border-radius: 8px;\n  font-size: 20px; }\n", ""]);
+	exports.push([module.id, ".maple-login .modal-content {\n  width: 600px;\n  height: 400px;\n  background: url(" + __webpack_require__(34) + ") no-repeat;\n  background-size: 600px 400px; }\n\n.maple-login .leave {\n  position: absolute;\n  right: 0;\n  top: 0;\n  cursor: pointer; }\n\n.maple-login .login-form {\n  margin-top: 50px; }\n\n.maple-login .form-group {\n  margin-bottom: 30px; }\n\n.maple-login .form-control {\n  display: inline-block;\n  width: 200px; }\n\n.maple-login .form-name {\n  color: #fff;\n  font-size: 20px; }\n\n.maple-login .login-button {\n  width: 80px;\n  height: 40px;\n  margin-left: 30px;\n  background: #AFCD01;\n  color: #FFF;\n  border-radius: 8px;\n  font-size: 20px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "20130128151109_49574.jpg?9a9a9069cf6f701673688d8ad38d2188";
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -865,28 +825,28 @@ webpackJsonp([1],[
 				e && e.preventDefault();
 
 				var elem = e.target || e.srcElement;
-				$.proxy(_userLogin.Users.login, _userLogin.Users)(elem, this);
+				_userLogin.Users.login(elem, this);
 			}
 		},
 		components: {
 			mapleLogo: __webpack_require__(17),
-			noticeModal: __webpack_require__(35)
+			noticeModal: __webpack_require__(36)
 		}
 	};
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(36)
-	__vue_script__ = __webpack_require__(38)
+	__webpack_require__(37)
+	__vue_script__ = __webpack_require__(39)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\Common\\noticeModal.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(39)
+	__vue_template__ = __webpack_require__(40)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -911,13 +871,13 @@ webpackJsonp([1],[
 	})()}
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(37);
+	var content = __webpack_require__(38);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(12)(content, {});
@@ -937,7 +897,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(9)();
@@ -951,7 +911,7 @@ webpackJsonp([1],[
 
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -967,52 +927,270 @@ webpackJsonp([1],[
 	};
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n    <!-- Modal -->\n    <div class=\"modal fade maple\" id=\"noticeModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n      <div class=\"modal-dialog notice-modal\" role=\"document\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span>&times;</span></button>\n            <maple-logo></maple-logo>\n          </div>\n          <div class=\"modal-body\">\n            <template v-if=\"noticeData.img\">\n            \t<img class=\"notice-img\" :src=\"'./assets/image/' + noticeData.img\">\n            </template>\n            <template v-else>\n            \t<h3>{{ noticeData.msg }}</h1>\n            </template>\n          </div>            \n        </div>\n      </div>\n    </div>\n</section>\n";
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n    <!-- Modal -->\n    <div class=\"modal fade maple-login maple\" id=\"myModal2\" tabindex=\"-1\" >\n      <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n\t        <div class=\"modal-body\">\n\t            <maple-logo></maple-logo>\n\t            <img src=\"" + __webpack_require__(41) + "\" class=\"leave\" data-dismiss=\"modal\" />\n\t            <div class=\"login-form\">\n\t            \t<form name=\"userLogin\" method=\"post\">\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">用户名：</label>\n\t\t            \t\t<input name=\"user\" type=\"text\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>\n\t\t            \t\t<input name=\"password\" type=\"password\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<button class=\"login-button btn\" @click=\"userLogin\">登录</button>\n\t            \t</form>\n\t            </div>\n\t        </div>\n        </div>\n      </div>\n    </div>\n</section>\n<notice-modal :notice-data=\"noticeData\"></notice-modal>\n";
-
-/***/ },
-/* 41 */
-/***/ function(module, exports) {
-
-	module.exports = "data:image/png;base64,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"
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n    <!-- Modal -->\n    <div class=\"modal fade maple-login maple\" id=\"myModal2\" tabindex=\"-1\" >\n      <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n\t        <div class=\"modal-body\">\n\t            <maple-logo></maple-logo>\n\t            <img src=\"" + __webpack_require__(42) + "\" class=\"leave\" data-dismiss=\"modal\" />\n\t            <div class=\"login-form\">\n\t            \t<form name=\"userLogin\" method=\"post\">\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">用户名：</label>\n\t\t            \t\t<input name=\"user\" type=\"text\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<div class=\"form-group\">\n\t\t            \t\t<label class=\"form-name\">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>\n\t\t            \t\t<input name=\"password\" type=\"password\" class=\"form-control\">\n\t\t            \t</div>\n\t\t            \t<button class=\"login-button btn\" @click=\"userLogin\">登录</button>\n\t            \t</form>\n\t            </div>\n\t        </div>\n        </div>\n      </div>\n    </div>\n</section>\n<notice-modal :notice-data=\"noticeData\"></notice-modal>\n";
 
 /***/ },
 /* 42 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n\t<div class=\"login-motion\">\n\t\t<div class=\"arrow\"></div>\n\t\t<div class=\"content\">\n\t\t\t<template v-if=\"!isLogin\">\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a \n\t\t\t\t\tdata-toggle=\"modal\"\n\t\t\t\t\tdata-target=\"#myModal2\">登录</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/register' }\">注册</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t\t<template v-else>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/user' }\">\n\t\t\t\t\t\t<img :src=\" './assets/image/' + userMsg.photo\" >\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a @click=\"signOut\">退出</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t</div>\n\t</div>\n</section>\n<login-modal></login-modal>\n";
+	module.exports = "data:image/png;base64,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"
 
 /***/ },
 /* 43 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<!--    <canvas id=\"canvas\">您的浏览器版本过低</canvas>-->\n    <canvas id=\"canvas_2\">您的浏览器版本过低</canvas>\n    \n    <header>\n        <div class=\"bg_image\"></div>\n        <div class=\"container top-adjust\">\n            <div class=\"logo-special\"></div>\n            <img src=\"" + __webpack_require__(44) + "\" class=\"mxd_logo\">\n            <a class=\"login_pic\" target=\"_blank\"><img src=\"" + __webpack_require__(45) + "\"></a>\n        </div>\n    </header>\n    \n    <section style=\"margin-top: 300px;\">\n        <div class=\"container\">\n            <div id=\"carousel-example-generic\" class=\"carousel slide\" data-ride=\"carousel\">\n              <!-- Indicators -->\n              <ol class=\"carousel-indicators\">\n                <li \n                data-target=\"#carousel-example-generic\" \n                v-for=\"item in products.banner\" \n                data-slide-to=\"{{ $index }}\" \n                :class=\" $index == 0 ? 'active' : ''\"></li>\n              </ol>\n              <!-- Wrapper for slides -->\n              <div class=\"carousel-inner\">\n                <div class=\"item\" \n                v-for=\"item in products.banner\" \n                :class=\" $index == 0 ? 'active' : ''\">\n                  <img :src=\"'./assets/image/' + item.pathname\" class=\"img-responsive\">\n                </div>\n              </div>\n\n              <!-- Controls -->\n              <a class=\"left carousel-control\" href=\"#carousel-example-generic\" role=\"button\" data-slide=\"prev\">\n                <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n              </a>\n              <a class=\"right carousel-control\" href=\"#carousel-example-generic\" role=\"button\" data-slide=\"next\">\n                <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n              </a>\n            </div>\n        </div>\n    </section>\n\n    <section>\n        <div class=\"container products\">\n            <div class=\"title\">宠物中心</div>\n            <div class=\"item\" v-for=\"item in products.cwzx\">\n                <div class=\"cover-img\">\n                    <img class=\"img-responsive\" :src=\"'./assets/image/' + item.path\">\n                </div>\n                <div class=\"item-msg\">\n                    <div class=\"name\"><a v-link=\"{path: '/search/cwzx'}\">{{ item.name }}</a></div>\n                    <div class=\"price\">\n                        <img src=\"" + __webpack_require__(22) + "\">\n                        <span>{{ item.price }}点</span>\n                    </div>\n                </div>\n                <div class=\"purchase\">\n                    <img src=\"" + __webpack_require__(46) + "\">\n                    <a data-toggle=\"modal\" data-target=\"#myModal\" @click=\"getProductMsg('cwzx', item.id)\">购买</a>\n                </div>\n            </div>\n        </div>\n    </section>\n<!--     <section>\n        <div class=\"container products\">\n          <div class=\"banner-container\">\n              \n          </div>\n        </div>\n    </section> -->\n    <section>\n        <div class=\"container products\">\n            <div class=\"title\">酷炫装备</div>\n            <div class=\"item\" v-for=\"item in products.kxzb\">\n                <div class=\"cover-img\">\n                    <img class=\"img-responsive\" :src=\"'./assets/image/' + item.path\">\n                </div>\n                <div class=\"item-msg\">\n                    <div class=\"name\"><a v-link=\"{path: '/search/cwzx'}\">{{ item.name }}</a></div>\n                    <div class=\"price\">\n                        <img src=\"" + __webpack_require__(22) + "\">\n                        <span>{{ item.price }}点</span>\n                    </div>\n                </div>\n                <div class=\"purchase\">\n                    <img src=\"" + __webpack_require__(46) + "\">\n                    <a data-toggle=\"modal\" data-target=\"#myModal\" @click=\"getProductMsg('kxzb', item.id)\">购买</a>\n                </div>\n            </div>\n        </div>\n    </section>\n    <section>\n        <div class=\"container products\">\n            <div class=\"title\">实用消耗</div>\n            <div class=\"item\" v-for=\"item in products.syxh\">\n                <div class=\"cover-img\">\n                    <img class=\"img-responsive\" :src=\"'./assets/image/' + item.path\">\n                </div>\n                <div class=\"item-msg\">\n                    <div class=\"name\"><a v-link=\"{path: '/search/cwzx'}\">{{ item.name }}</a></div>\n                    <div class=\"price\">\n                        <img src=\"" + __webpack_require__(22) + "\">\n                        <span>{{ item.price }}点</span>\n                    </div>\n                </div>\n                <div class=\"purchase\">\n                    <img src=\"" + __webpack_require__(46) + "\">\n                    <a data-toggle=\"modal\" \n                       data-target=\"#myModal\" \n                       @click=\"getProductMsg('kxzb', item.id)\">购买</a>\n                </div>\n            </div>\n        </div>\n    </section>\n    <shopping-modal \n      :modal-name=\" modal.name \" \n      :modal-price=\" modal.price\" \n      :modal-path=\" modal.path \">\n    </shopping-modal>\n    <login-window></login-window>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<section>\n\t<div class=\"login-motion\">\n\t\t<div class=\"arrow\"></div>\n\t\t<div class=\"content\">\n\t\t\t<template v-if=\"!isLogin\">\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a \n\t\t\t\t\tdata-toggle=\"modal\"\n\t\t\t\t\tdata-target=\"#myModal2\">登录</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/register' }\">注册</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t\t<template v-else>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a v-link=\"{ path: '/user' }\">\n\t\t\t\t\t\t<img :src=\" './assets/image/' + userMsg.photo\" >\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"circle\">\n\t\t\t\t\t<a @click=\"signOut\">退出</a>\n\t\t\t\t</div>\n\t\t\t</template>\n\t\t</div>\n\t</div>\n</section>\n<login-modal></login-modal>\n";
 
 /***/ },
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "hope.png?37ed2bba28e5f0bd88868496853c2f92";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<!--    <canvas id=\"canvas\">您的浏览器版本过低</canvas>-->\n    <canvas id=\"canvas_2\">您的浏览器版本过低</canvas>\n    <header-component :bg-image=\"bgImage\"></header-component>\n    <div style=\"width: 1250px;margin: 0 auto;position:relative\">\n      <a class=\"login_pic\" target=\"_blank\"><img src=\"" + __webpack_require__(46) + "\"></a>\n    </div>\n    <section style=\"margin-top: 300px;\">\n        <div class=\"container\">\n            <div id=\"carousel-example-generic\" class=\"carousel slide\" data-ride=\"carousel\">\n              <!-- Indicators -->\n              <ol class=\"carousel-indicators\">\n                <li \n                data-target=\"#carousel-example-generic\" \n                v-for=\"item in products.banner\" \n                data-slide-to=\"{{ $index }}\" \n                :class=\" $index == 0 ? 'active' : ''\"></li>\n              </ol>\n              <!-- Wrapper for slides -->\n              <div class=\"carousel-inner\">\n                <div class=\"item\" \n                v-for=\"item in products.banner\" \n                :class=\" $index == 0 ? 'active' : ''\">\n                  <img :src=\"'./assets/image/' + item.pathname\" class=\"img-responsive\">\n                </div>\n              </div>\n\n              <!-- Controls -->\n              <a class=\"left carousel-control\" href=\"#carousel-example-generic\" role=\"button\" data-slide=\"prev\">\n                <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n              </a>\n              <a class=\"right carousel-control\" href=\"#carousel-example-generic\" role=\"button\" data-slide=\"next\">\n                <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n              </a>\n            </div>\n        </div>\n    </section>\n\n    <section>\n        <div class=\"container products\">\n            <div class=\"title\">宠物中心</div>\n            <div class=\"item\" v-for=\"item in products.cwzx\">\n                <div class=\"cover-img\">\n                    <img class=\"img-responsive\" :src=\"'./assets/image/' + item.path\">\n                </div>\n                <div class=\"item-msg\">\n                    <div class=\"name\"><a v-link=\"{path: '/search/cwzx'}\">{{ item.name }}</a></div>\n                    <div class=\"price\">\n                        <img src=\"" + __webpack_require__(22) + "\">\n                        <span>{{ item.price }}点</span>\n                    </div>\n                </div>\n                <div class=\"purchase\">\n                    <img src=\"" + __webpack_require__(47) + "\">\n                    <a data-toggle=\"modal\" data-target=\"#myModal\" @click=\"getProductMsg('cwzx', item.id)\">购买</a>\n                </div>\n            </div>\n        </div>\n    </section>\n    <section>\n        <div class=\"container products\">\n            <div class=\"title\">酷炫装备</div>\n            <div class=\"item\" v-for=\"item in products.kxzb\">\n                <div class=\"cover-img\">\n                    <img class=\"img-responsive\" :src=\"'./assets/image/' + item.path\">\n                </div>\n                <div class=\"item-msg\">\n                    <div class=\"name\"><a v-link=\"{path: '/search/cwzx'}\">{{ item.name }}</a></div>\n                    <div class=\"price\">\n                        <img src=\"" + __webpack_require__(22) + "\">\n                        <span>{{ item.price }}点</span>\n                    </div>\n                </div>\n                <div class=\"purchase\">\n                    <img src=\"" + __webpack_require__(47) + "\">\n                    <a data-toggle=\"modal\" data-target=\"#myModal\" @click=\"getProductMsg('kxzb', item.id)\">购买</a>\n                </div>\n            </div>\n        </div>\n    </section>\n    <section>\n        <div class=\"container products\">\n            <div class=\"title\">实用消耗</div>\n            <div class=\"item\" v-for=\"item in products.syxh\">\n                <div class=\"cover-img\">\n                    <img class=\"img-responsive\" :src=\"'./assets/image/' + item.path\">\n                </div>\n                <div class=\"item-msg\">\n                    <div class=\"name\"><a v-link=\"{path: '/search/cwzx'}\">{{ item.name }}</a></div>\n                    <div class=\"price\">\n                        <img src=\"" + __webpack_require__(22) + "\">\n                        <span>{{ item.price }}点</span>\n                    </div>\n                </div>\n                <div class=\"purchase\">\n                    <img src=\"" + __webpack_require__(47) + "\">\n                    <a data-toggle=\"modal\" \n                       data-target=\"#myModal\" \n                       @click=\"getProductMsg('kxzb', item.id)\">购买</a>\n                </div>\n            </div>\n        </div>\n    </section>\n    <shopping-modal \n      :modal-name=\" modal.name \" \n      :modal-price=\" modal.price\" \n      :modal-path=\" modal.path \">\n    </shopping-modal>\n    <login-window></login-window>\n";
 
 /***/ },
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fresh2014.png?a958e78a75eb28351e70b20f149cc1b5";
+	module.exports = __webpack_require__.p + "hope.png?37ed2bba28e5f0bd88868496853c2f92";
 
 /***/ },
 /* 46 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fresh2014.png?a958e78a75eb28351e70b20f149cc1b5";
+
+/***/ },
+/* 47 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE1klEQVR4nMWWXYxdVRXHf2vtc+98MNYW0xas2qRGE/ugD9qqWKwYExMSMRoeeCSKDyXF4EcoiUAjpRLQWBGRBEj8eNGiiQ8+kpjQoUSY+hEl+IGJVGltrcOH03bmnLP3+vtw5+Iw3Du9MwZcL/9z9tr/vf7nv1f2PvB/Dus/xJ07DxCMU3W+4fuOnn5dBeSDO+717uRevIJ6jhAPWao+n25+fP61FuAAFmV3VF3ojMPURnxs8jrl+ni584MbXmsBFUCkzmf87Ox98monk+ugMxmGbYz5l34IfAIgH9zxBjAhW5S9xgiByRDnqltmwpbm8sGd7yM3P9fUmy7x1EFzZwhPU1byPjO/FQf0PxSH3qbLIMpMdduvd1ZLc9VXnjzW3rHjk5qfe0IXbSBSF8vNFYGmvepg4+sCyYGg58Pq0cyjPo81Z38GA8zs3DLzpHJdS4GlCql8RPIjamoUxUMZKa8ZpYIW5pCl+wYKAFBoRrlFlogSl43v/1UdpT0uFaxAFGJNGISaBSQ93L312L+HCzCmlWtkIOL9vUGm1TaIwAhfG8rL/Flw/2q/1rB+PlraBQhCJD+3/91bCzqiXKMIVCJUVokRRNug0vxyfP9vnn657wZVj9ATVlo0Fm6eiNx8GDhS2oZUTQDqCx8dZZT5Ocyr25bWGujARQd+/69S2tOKjDyhUj40dcdTf4q2bfsOhFaHipbI9V8nb//dIxcUACDxuNoG3FHkXQCKckylIQi3iJFRyPP5s8j89uV1hguAx6KtQULYu3qiNB25hYhQFIgyEioy0S6cWfe1P3x/eZ2BPQBAxNFSGkxjgPlLN7/zPYQezfW5m2jm3fTfDxC4DUE3iAjM7a5BZWzQYD9e+PLbVU29kVLXRK6/ePHX/3LoxZve8RbMJjGTQYfeKVeGOqme0vV3/fmZQfnhDgAR5WnlvN0dSsmXA4fW3/3McytxVhsrClDo0SjtdkuVFGX37Je2rSdU9X1bPODPIWKlGzICMLUbv/lsLM+tuAVnbtx6TaqqH6XuBLlZoOQWexVDr4CBYUCoCP3WPH1846Hjs/3Uig5AHMltg3e6SlXXUqe75lvQUMpN/d7cNtcDB0ZyAODUDVseSZ4+pld/+qrCTJQ2y1Pavumev/9xZAEA/9h76RVgafE1uZPAQcLcX94WCRRBbyCIoKXnggEVZjOX3ntidunaF9iCxYUDg3xVbzH/6ebvnHpsFN7J6zftRXwA4zSkB9783ZOzy+dc0IETezZ9D7drO1UXgDY3EPrWlvv/+YXhhS+ZiChPdaruNq8SkmibGvBrttx/6vDSuSv+Xj63Z9NVZlw7NjaBu+PujI1NIHHjiT2bdw3jRZR7Op3uttSpMDPcnfGxCSLyj0/u2TwxsgDl/OmUOihKoEKoBFHodCoiytVDBZRypXti8WeAUAkRVFWFonx06dyVDyKzkAJkvthJLoQk1D9jB/GkLBWMZbxSCKkd2QGTDjd1jQhZr2iIoKlrzOzwUJ7Zw23TICn6vCiFJufzZvaLV8xdSQDA8es2fNudG6qqA0BuWgLu3vrQC/tW4j372fXTKaVd1WITNk2rlNLutz4wO70qAQB/+9zFl5USnwLCk/9k64PPHxuRd2UpcbkZp9z9B2978PkXR+G9rvEfmqGMju1uUa4AAAAASUVORK5CYII="
+
+/***/ },
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(127);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./index.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./index.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 127 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "#canvas {\n  position: fixed;\n  left: 0;\n  top: 0;\n  z-index: 999;\n  background-color: aqua; }\n\n#canvas_2 {\n  position: fixed;\n  left: 0;\n  top: 0;\n  z-index: 800;\n  opacity: 0;\n  background: #FFF; }\n\n.login_pic {\n  position: absolute;\n  left: 10px;\n  top: 190px; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 128 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(129)
+	__vue_script__ = __webpack_require__(132)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\Common\\header.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(131)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-782e015b/header.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 129 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(130);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".bg_image {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 700px;\n  background-size: cover;\n  z-index: -999; }\n\n.logo-special {\n  display: block;\n  height: 70px;\n  background: url(" + __webpack_require__(11) + ") no-repeat 0px -90px; }\n\n.mxd_logo {\n  position: absolute;\n  left: 490px;\n  top: -50px; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t<header>\n        <div class=\"bg_image\" :style=\"{ background: getBgImage()}\"></div>\n        <div class=\"container top-adjust\">\n            <a class=\"logo-special\" v-link=\"{ path: '/' }\"></a>\n            <img src=\"" + __webpack_require__(45) + "\" class=\"mxd_logo\">\n        </div>\n    </header>\n";
+
+/***/ },
+/* 132 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		props: ['bgImage'],
+		methods: {
+			getBgImage: function getBgImage() {
+				return 'url(./assets/image/' + this.bgImage + ') no-repeat center top';
+			}
+		}
+	};
 
 /***/ }
 ]);

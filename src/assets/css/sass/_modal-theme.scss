@@ -1,0 +1,29 @@
+ .modal.maple {
+ 	.modal {
+ 		&-header,&-body {
+ 			text-align: center;
+ 		}
+ 	}
+ 	.maple-logo {
+ 	  display: inline;
+	  font-family: "微软雅黑";
+	  font-size: 30px;
+	  font-weight: 500;
+	  line-height: 1.1;
+	  color: aqua;
+ 	}
+ 	.list-item {
+	  overflow: visible;
+	  width: 240px;
+	  margin: 10px auto 0 auto;
+	  font-size: 20px;
+	  white-space: nowrap;
+	  text-align: left;
+	  .goods-name {
+	  	color: #50C1DF;
+	  }
+	  .price {
+	  	color: #FF7F27;
+	  }
+ 	}
+ }

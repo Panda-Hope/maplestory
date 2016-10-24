@@ -8,7 +8,7 @@ import routerMap from './routers';
 
 import effects from './assets/js/effects';
 
-import Users from './assets/js/interactive/userLogin';
+import {Users} from './assets/js/interactive/userLogin';
 
 
 Vue.use(VueResource);

@@ -1,0 +1,59 @@
+.products {
+	padding-top: 30px;
+	> .title {
+		margin-right: 3px;
+	    padding: 10px 0 20px 20px;
+	    border-top: 2px solid aqua;
+	    border-right: 2px solid aqua;
+	    border-left: 2px solid aqua;
+	    font-size: 25px;
+	    color: #FE2687;
+	}
+	> .item {
+		float: left;
+	    width: 245px;
+	    height: 245px;
+	    margin-top: -2px;
+	    margin-right: -2px;
+	    border: 2px solid aqua;
+	    > .item-msg {
+	    	.name,.price {
+	    		font-size: 18px;
+    			text-align: center;
+	    	}
+	    	.name {
+	    		margin-top: 20px;
+	    		a {
+	    			color: purple;
+    				cursor: pointer;
+    				&:hover {
+    					text-decoration: none;
+    				}
+	    		}
+	    	}
+	    	.price span {
+	    		color: orange;
+	    	}
+	    }
+	    > .cover-img {
+	    	width: 70px;
+		    height: 70px;
+		    margin: 20px auto 0;
+	    }
+	}
+	.purchase {
+		font-size: 18px;
+  		text-align: center;
+	}
+	.purchase a {
+		display: inline-block;
+	    background: url(../image/button_2.png) no-repeat 0px -3px;
+	    width: 60px;
+	    height: 30px;
+	    margin-left: 10px;
+	    font-size: 12px;
+	    text-align: center;
+	    line-height: 30px;
+	    text-decoration: none;
+	}
+}

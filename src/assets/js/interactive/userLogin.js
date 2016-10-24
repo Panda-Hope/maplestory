@@ -4,6 +4,8 @@ if (typeof jQuery === 'undefined') {
 
 import Notice from '../notice';
 let Users = function() {
+	this.userMsg;
+	this.vue;
 };
 
 Users.VERSION = '1.0.0';
@@ -36,7 +38,7 @@ Users.prototype.login = function(_relatedTarget, _relatedContext) {
 					msg: '验证失败请重新输入',
 					img: 'f66fe171f6.jpg'
 				};
-				_self.noticeAvaliable() ? Notice.showNotice(data) : _self.spareNotice(data);
+				Notice.showNotice(data);
 			}
 		});
 	}else {
@@ -52,13 +54,12 @@ Users.prototype.recordMsg = function() {
 
 	if (!cookies.user) {
 		// cookie setting fail
-		let _self = this,
-			data = {
-				msg: '服务器繁忙，请稍后重试',
-				img: 'f66fe171f7.jpg'
-			};
+		let data = {
+			msg: '服务器繁忙，请稍后重试',
+			img: 'f66fe171f7.jpg'
+		};
 
-		_self.noticeAvaliable() ? Notice.showNotice(data) : _self.spareNotice(data);
+		Notice.showNotice(data);
 		return false;
 	}
 
@@ -96,7 +97,7 @@ Users.prototype.getUserMsg = function() {
 		return {length: 0}; // for not login
 	}
 
-	if (this.userMsg.length > 0 && this.userMsg.user) {
+	if (this.userMsg && this.userMsg.user) {
 		return this.userMsg;
 	}
 
@@ -174,19 +175,6 @@ Users.prototype.objectConversion = function(string) {
 	obj.length = length;
 
 	return obj;
-};
-
-/* ===========================
- * NOTICE COMPONENT DETECTION
- * ==========================*/
-Users.prototype.noticeAvaliable = function() {
-	return typeof Notice === undefined ? false : true;
-};
-
-//if not install notice class , use this spare method
-Users.prototype.spareNotice = function(data) {
-	console.warn('please install notice modal components to get better experience');
-	data.msg && alert(data.msg);
 };
 
 /* =====================================

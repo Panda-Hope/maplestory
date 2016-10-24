@@ -12,10 +12,14 @@ Notice.AUTHOR = 'Hope';
 Notice.EMAIL = '494873674@qq.com';
 Notice.LAST_UPDATE_TIME = '2016-10-19';
 
+/* =============================
+ * @_relatedContext: vue context
+ * @option: type Object
+ * =============================*/
 Notice.prototype.init = function(_relatedContext, options) {
 	_relatedContext && (this.vue = _relatedContext);
 
-	if (options === undefined || !$.isPlainObject(options)) {
+	if (options === undefined) {
 		return;
 	}
 
@@ -58,7 +62,6 @@ Notice.prototype.hasNoticeModal = function() {
  * data {msg: '', img: ''}
  * ===========================*/
 Notice.prototype.showNotice = function(data) {
-	console.log(this);
 	if (!$.isPlainObject(data)) {
 		return false;
 	}

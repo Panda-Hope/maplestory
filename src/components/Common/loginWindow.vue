@@ -126,7 +126,7 @@
 			signOut: function(e) {
 				e && e.preventDefault();
 
-				$.proxy(Users.signOut, Users)(this);
+				Users.signOut(this);
 			}
 		},
 		data() {

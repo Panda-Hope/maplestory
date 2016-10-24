@@ -76,7 +76,6 @@
 			//propagate vue context and other options to users class
 			let _context = this;
 			Notice.init(_context);
-			// $.proxy(Users.showNotice, Users)({});
 		},
 		data() {
 			return {
@@ -88,7 +87,7 @@
 				e && e.preventDefault();
 				
 				let elem = e.target || e.srcElement;  // for support ie6-8
-				$.proxy(Users.login, Users)(elem, this);
+				Users.login(elem, this);
 			}
 		},
 		components: {
