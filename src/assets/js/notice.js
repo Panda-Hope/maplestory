@@ -62,23 +62,22 @@ Notice.prototype.hasNoticeModal = function() {
  * data {msg: '', img: ''}
  * ===========================*/
 Notice.prototype.showNotice = function(data) {
-	if (!$.isPlainObject(data)) {
+	if (!data) {
 		return false;
 	}
-	if (!this.hasNoticeModal()) {
-		return this.spareNotice(data);
-	} 
+	this.hasNoticeModal() || this.spareNotice(data); 
 	
 	this.vue.noticeData = data; // Synchronize notice data
-	let modalApi = this.modalApi;
 
+	let modalApi = this.modalApi;
 	$(modalApi).modal('show');
 };
 
-Notice.prototype.hideNotice = function() {
+Notice.prototype.hideNotice = function(callback) {
 	let modalApi = this.modalApi;
 
 	$(modalApi).modal('hide');
+	callback && callback();
 };
 
 

@@ -20,5 +20,41 @@ export default {
 				this.modal.price = data.price;
 			}
 		});
+	},
+	getDetailedMsg: function() {
+		let vue = this;
+
+		$.ajax({
+			method: 'get',
+			url: '../index.php/Home/Myhome/usermsgVue',
+		}).done(function(response) {
+			if (response.length >= 1) {
+				vue.userMsgLists = response[0];
+			}
+		});
+	},
+	getAddress: function() {
+		let vue = this;
+
+		$.ajax({
+			method: 'get',
+			url: '../index.php/Home/Myhome/useraddrVue'
+		}).done(function(response) {
+			if (response) {
+				vue.addressData = response;
+			}
+		});
+	},
+	getOrders: function() {
+		let vue = this;
+
+		$.ajax({
+			method: 'get',
+			url: '../index.php/Home/Myhome/orderVue'
+		}).done(function(data) {
+			if (data.length >=1) {
+				vue.orders = data;
+			}
+		});
 	}
 };

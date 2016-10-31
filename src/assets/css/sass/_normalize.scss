@@ -429,3 +429,12 @@ th {
 .top-adjust {
   margin-top: 50px;
 }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.maple-title {
+  @include maple-title();
+}

@@ -148,7 +148,7 @@
             data(transition) {
                 let $route = this.$route;
                 let searchKey = $route.query.searchKey;
-
+                
                 this.getProducts(searchKey);
             },
         },

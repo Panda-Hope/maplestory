@@ -33,7 +33,7 @@ class Logincontroller extends Controller
 	
 	public function verifying() {
 		$m = M('user');
-		$check['name']=I('post.user');
+		$check['name']=urldecode(I('post.user'));
 		$check['password']=I('post.password');
 
 		$result=$m->field('name,photo,password')->where($check)->find();

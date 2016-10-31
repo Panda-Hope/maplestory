@@ -1,0 +1,21 @@
+@mixin padding-fill() {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+// set div center auto
+@mixin center-auto() {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin fix-width-span($width) {
+	display: inline-block;
+	width: $width
+}
+
+@mixin maple-title($color: #7F7F7F) {
+	text-align: center;
+    font-size: 100px;
+    color: $color;
+}

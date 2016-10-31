@@ -1,0 +1,18 @@
+//** li ships with dotted underline
+.navbar {
+	&.dotted {
+		margin-top: 20px;
+		width: 320px;
+		@include center-auto;
+		> li {
+			padding: 10px 5px;
+			border-bottom: 1px dotted #999999;
+			color: $gray-color;
+			font-size: $largerSize;
+			.name {
+				@include fix-width-span(100px)
+			}
+		}
+	}
+
+}

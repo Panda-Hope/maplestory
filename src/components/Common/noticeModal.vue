@@ -9,6 +9,10 @@
 			width: 200px;
 			margin-top: -10px;
 		}
+		&-msg {
+			font-size: 30px;
+    		color: #666;
+		}
 	}
 </style>
 <template>
@@ -26,7 +30,7 @@
 	            	<img class="notice-img" :src="'./assets/image/' + noticeData.img">
 	            </template>
 	            <template v-else>
-	            	<h3>{{ noticeData.msg }}</h1>
+	            	<h3 class="notice-msg">{{ noticeData.msg }}</h1>
 	            </template>
 	          </div>            
 	        </div>

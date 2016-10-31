@@ -133,7 +133,7 @@ Users.prototype.signOut = function(_relatedContext) {
  * VERIFY USER MSG WHETHER MATCH 
  * ==============================*/
 Users.prototype.verifying = function(obj) {
-	if (obj.length<=0 || !obj.user || !obj.password) {
+	if (obj.length<=0) {
 		return false;
 	}
 
@@ -169,13 +169,14 @@ Users.prototype.objectConversion = function(string) {
 	for (let i=0;i<arr.length;i++) {
 		let a = arr[i].split('=');
 
-		obj[a[0].trim()] = a[1].trim();
+		obj[a[0].trim()] = decodeURI(a[1].trim());
 		length++;
 	}
 	obj.length = length;
 
 	return obj;
 };
+
 
 /* =====================================
  *	BROWSER STORAGE FEATURES DETECTION
