@@ -2,7 +2,8 @@
 	$noticeM-modal-width: 400px;
 
 	.notice {
-		&-modal {
+		z-index: 1050;
+		.modal-dialog {
 			width: $noticeM-modal-width
 		}
 		&-img {
@@ -18,8 +19,8 @@
 <template>
 	<section>
 	    <!-- Modal -->
-	    <div class="modal fade maple" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	      <div class="modal-dialog notice-modal" role="document">
+	    <div class="modal fade maple notice" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	      <div class="modal-dialog" role="document">
 	        <div class="modal-content">
 	          <div class="modal-header">
 	            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>

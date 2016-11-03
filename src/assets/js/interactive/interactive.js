@@ -18,6 +18,7 @@ export default {
 				this.modal.name = data.name;
 				this.modal.path = data.path;
 				this.modal.price = data.price;
+				this.modal.id = data.id;
 			}
 		});
 	},

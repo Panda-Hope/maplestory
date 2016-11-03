@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section id="test">
 	    <!-- Modal -->
 	    <div class="modal fade maple" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	      <div class="modal-dialog" role="document">
@@ -24,8 +24,8 @@
 	            </div>
 	          </div>
 	          <div class="modal-footer">
-	            <button type="button" class="btn btn-default">加入购物车</button>
-	            <button type="button" class="btn btn-primary">直接购买</button>
+	            <button type="button" class="btn btn-default" @click="Shopping('addCart', modalId)">加入购物车</button>
+	            <button type="button" class="btn btn-primary" @click="Shopping('buy', modalId)">直接购买</button>
 	          </div>              
 	        </div>
 	      </div>
@@ -34,10 +34,20 @@
 </template>
 
 <script>
+    import {Users, Notice, Shopping} from '../../assets/js/interactive/shopping';
+    
 	export default {
-		props: ['modalName', 'modalPrice', 'modalPath'],
+		props: ['modalName', 'modalPrice', 'modalPath', 'modalId'],
+		data() {
+			return {
+				noticeData: {} 
+			};
+		},
+		methods: {
+			Shopping
+		},
 		components: {
-			mapleLogo: require('./mapleFontLogo.vue')
+			mapleLogo: require('./mapleFontLogo.vue'),
 		}
 	};
 </script>

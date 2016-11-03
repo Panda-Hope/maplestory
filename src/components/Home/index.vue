@@ -1,4 +1,7 @@
 <style lang="sass">
+    @import '../../assets/css/sass/mixins/assist';
+    @import '../../assets/css/sass/mixins/clearfix';
+
     #canvas {
         position:fixed;
         left:0;
@@ -19,6 +22,42 @@
         left: 10px;
         top: 190px;
     }
+    .footer-bg {
+        width: 1250px;
+        height: 240px;
+        @include center-auto;
+        background: url(../../assets/image/bottom_2014.jpg) no-repeat;
+    }
+    .container {
+        .new-show {
+            height: 230px;
+            margin-top: 20px;
+            border: 5px solid #0FF;
+            border-radius: 10px;
+            ul {
+                margin-left: 30px;
+                padding-top: 30px;
+                @include clearfix;
+                li {
+                    float: left;
+                    .pic {
+                            display: block;
+                            width: 120px;
+                            height: 120px;
+                            padding-top: 10px;
+                            text-align: center;
+                            background: url(../../assets/image/border3_chrm20142.png) no-repeat;
+                    }
+                }
+            }
+            .content {
+                width: 550px;
+                height: 200px;
+                @include center-auto;
+                background: url(../../assets/image/shop_bg.png) no-repeat;
+            }
+        }
+    }
 </style>
     
 <template>
@@ -26,7 +65,7 @@
     <canvas id="canvas_2">您的浏览器版本过低</canvas>
     <header-component :bg-image="bgImage"></header-component>
     <div style="width: 1250px;margin: 0 auto;position:relative">
-      <a class="login_pic" target="_blank"><img src="../../assets/image/fresh2014.png"></a>
+      <a class="login_pic" v-link="{ path: '/register' }"><img src="../../assets/image/fresh2014.png"></a>
     </div>
     <section style="margin-top: 300px;">
         <div class="container">
@@ -80,6 +119,18 @@
             </div>
         </div>
     </section>
+    <section class="container">
+        <div class="new-show">
+            <div class="content">
+                <ul>
+                    <li v-for="item in products.xpzs">
+                        <span class="pic"><img :src="'./assets/image/' + item.path" ></span>
+                        <a data-toggle="modal" data-target="#myModal" @click="getProductMsg('xpzs', item.id)">{{ item.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <section>
         <div class="container products">
             <div class="title">酷炫装备</div>
@@ -124,10 +175,14 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div class="footer-bg"></div>
+    </footer>
     <shopping-modal 
       :modal-name=" modal.name " 
       :modal-price=" modal.price" 
-      :modal-path=" modal.path ">
+      :modal-path=" modal.path "
+      :modal-id=" modal.id ">
     </shopping-modal>
     <login-window></login-window>
 </template>
@@ -141,7 +196,7 @@
             return {
                 bgImage: 'bg160927.jpg', // header component background image
                 products: [],
-                modal: {name: '系统错误', path: '1424_777385.GIF', price: '暂无'}
+                modal: {name: '系统错误', path: '1424_777385.GIF', price: '暂无', id: 0}
             };
         },
         route: {

@@ -11,17 +11,20 @@
 					}
 				} 
 			}
-		}
-		&.paging {
-
+		}	
+	}
+	.paging {
+		display: none;
+		&.active {
+			display: block;
 		}
 	}
 </style>
 
 <template>
 	<section>
-		<template v-if="orders">
-			<ul class="navbar dotted paging" v-for="item in orders" data-rank="{{ $index }}">
+		<template v-if="orders.length >= 1">
+			<ul class="navbar dotted paging" v-for="item in orders" :class="{active: $index == 0 }" id="{{ $index }}" >
 				<li>
 					<span class="name">订单编号：</span>
 					<span>{{ item.orderid }}</span>
@@ -53,14 +56,14 @@
 			</ul>
 			<ul class="navbar dotted page">
 				<li>
-					<a @click="Paging('prevPage')">上一页</a>
-					<a @click="Paging('nextPage')">下一页</a>
+					<a @click="Paging('goPage', 'prev')">上一页</a>
+					<a @click="Paging('goPage', 'next')">下一页</a>
 					<span style="float: right">一共{{ orders.length }}页</span>
 				</li>
 			</ul>
 		</template>
 		<template v-else>
-			<h1>暂无您的订单信息</h1>
+			<h1 style="color: #7F7F7F;font-size: 55px;font-weight: bold;text-align: center;">暂无您的订单信息</h1>
 		</template>
 	</section>
 </template>

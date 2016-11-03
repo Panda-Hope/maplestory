@@ -95,7 +95,7 @@ class MyhomeController extends Controller
 		$id['userid']=$Myname['id'];
 		$result=$m->table('orderlist')->where($id)->select();
 		$page=new \Org\Page(count($result),1);
-		$result=$m->limit($page->limit)->where($data)->alias(a)->field('a.phone,b.orderid,b.commodityname,b.price,b.addtime,c.xingming,c.shengfen,c.city,c.street')->join("__ORDERLIST__ b ON b.userid=a.id")->join("__USERADDR__ C ON c.userid=a.id")->order('id desc')->select();
+		$result=$m->where($data)->alias(a)->field('a.phone,b.orderid,b.commodityname,b.price,b.addtime,c.xingming,c.shengfen,c.city,c.street')->join("__ORDERLIST__ b ON b.userid=a.id")->join("__USERADDR__ C ON c.userid=a.id")->order('id desc')->select();
 		$this->ajaxReturn($result);
 	}
 	

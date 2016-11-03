@@ -46,6 +46,10 @@ Users.prototype.login = function(_relatedTarget, _relatedContext) {
 	}
 };
 
+Users.prototype.register = function() {
+	
+};
+
 /* ================
  * RECORD USER MSG
  * ================ */

@@ -14,5 +14,21 @@
 			}
 		}
 	}
-
+	&.register {
+		width: 400px;
+		margin-top: 450px;
+		@include center-auto;
+		padding-left: 40px;
+		> li {
+			margin-top: 20px;
+			color: $gray-color;
+			font-size: $largerSize;
+			.name {
+				@include fix-width-span(100px)
+			}
+			.register-button {
+				margin-left: 110px;
+			}
+		}
+	}
 }

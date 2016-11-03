@@ -18,6 +18,12 @@ export default function(router) {
                     },
                     requireAuth: false
                 },
+                '/pay': {
+                    component: function() {
+                        require(['./components/pay/pay.vue']);
+                    },
+                    requireAuth: true
+                },
                 '/user': {
                     component: function(resolve) {
                         require(['./components/user/index.vue'], resolve);

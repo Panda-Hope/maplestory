@@ -68,7 +68,7 @@ Notice.prototype.showNotice = function(data) {
 	this.hasNoticeModal() || this.spareNotice(data); 
 	
 	this.vue.noticeData = data; // Synchronize notice data
-
+	// console.log(this.vue, this.vue.noticeData);
 	let modalApi = this.modalApi;
 	$(modalApi).modal('show');
 };
